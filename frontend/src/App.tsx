@@ -2,6 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { AddBox } from '@mui/icons-material'
+import { Button } from '@mui/material'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,7 +18,9 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>MATCHMAKING</h1>
+      <AddBox></AddBox>
+      <Button>Test entry point</Button>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
