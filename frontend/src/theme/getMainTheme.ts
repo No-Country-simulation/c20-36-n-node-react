@@ -4,9 +4,11 @@ const palette = {
   type: 'light',
   boxShadow: '0px 14px 64px -4px rgba(0, 0, 0, 0.12)',
   purple: {
-    1: '#6665DD',
-    2: '#524192',
-    3: '#151537',
+    1: '#2C1B47',
+    2: '#724C9D',
+    3: '#320064',
+    4: '#DCCAE9',
+    5: '#9356A0'
   },
   green: {
     1: 'green',
@@ -20,13 +22,12 @@ const palette = {
   red: {
     1: 'red',
   },
-  tan: {
-    20: '#E6DECC',
-  },
   mono: {
     white: '#FFFFFF',
     black: {
-      1: '#1F242D',
+      1: '#0B0205',
+      2: '#141414',
+      3: '#282828',
     },
   },
   grey: {
