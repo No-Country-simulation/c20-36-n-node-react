@@ -18,13 +18,14 @@
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.7",
+    "@fontsource/roboto": "^5.0.14",
+    "frontend": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.1",
     "react-scroll": "^1.9.0",
     "swiper": "^11.1.11",
     "formik": "^2.4.6",
-    "frontend": "file:",
     "yup": "^1.4.0"
   },
   "devDependencies": {
