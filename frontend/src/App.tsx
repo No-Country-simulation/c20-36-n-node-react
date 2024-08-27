@@ -22,7 +22,7 @@ function App() {
       <h1>MATCHMAKING</h1>
       <AddBox></AddBox>
       <Button>Test entry point</Button>
-      <Box sx={{bgcolor: 'green.1'}}>test for pallet</Box>
+      <Box sx={{bgcolor: 'purple.1', p: 3}}>test for pallet</Box>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
