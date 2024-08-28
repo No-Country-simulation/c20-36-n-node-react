@@ -62,5 +62,29 @@ Contacto
 
 Para preguntas o soporte, puedes contactarnos a través de [tu correo electrónico o enlace de contacto].
 
+## ¡Hay equipo!
+
+**Frontend Devs**:
+
+• Pablo
+
+• Diego A. Herrera 
+
+• Martín Dotto
+
+**Backend Devs:**
+
+• José 
+
+• Lucía Espindola
+
+**Tester:**
+
+• Mateo
+
+**Project Manager:**
+
+• Triana Devia
+
 
 
