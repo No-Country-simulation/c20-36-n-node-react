@@ -1,6 +1,8 @@
 # c20-36-n-node-react 🚀
 # Devconnect
+
 ## Conecta, colabora, crea
+![Programador feliz conectando](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbp8txTWc0xQF1MeCIvuYqgsQ9xQJQPVra1A&s)
 
 ## Descripción del Proyecto
 
@@ -74,13 +76,13 @@ Para preguntas o soporte, puedes contactarnos a través de [tu correo electróni
 
 **Backend Devs:**
 
-• José 
+• José Alvarez
 
 • Lucía Espindola
 
 **Tester:**
 
-• Mateo
+• Mateo Lopez
 
 **Project Manager:**
 
