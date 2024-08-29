@@ -4,11 +4,12 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { StrictMode } from "react";
-import App from "./App.tsx";
 import "./index.css";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router/RouterProvider.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </StrictMode>
 );
