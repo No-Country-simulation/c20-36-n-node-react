@@ -26,6 +26,7 @@ export function Footer() {
           <Typography
             variant="h6"
             sx={{
+              color: 'purple.1',
               fontSize: { xs: '18px', md: '24px' },
               fontWeight: 'bold',
               mb: 1,
@@ -53,7 +54,7 @@ export function Footer() {
           }}
         >
           <Box>
-            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+            <Typography variant="h6" sx={{ color: 'purple.1', fontWeight: 'bold' }}>
               Empresa
             </Typography>
             <Link href="#" underline="none">
@@ -70,7 +71,7 @@ export function Footer() {
           </Box>
 
           <Box>
-            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+            <Typography variant="h6" sx={{ color: 'purple.1', fontWeight: 'bold' }}>
               Documentación
             </Typography>
             <Link href="#" underline="none">
@@ -87,7 +88,7 @@ export function Footer() {
           </Box>
 
           <Box>
-            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+            <Typography variant="h6" sx={{ color: 'purple.1', fontWeight: 'bold' }}>
               Social
             </Typography>
             <Link href="#" underline="none" target="_blank">
@@ -115,8 +116,12 @@ export function Footer() {
           py: 2,
         }}
       >
-        <Typography variant="body2">Devconnect. Todos los derechos reservados. 2024</Typography>
-        <Typography variant="body2">Términos y condiciones</Typography>
+        <Typography variant="body2" sx={{ color: 'purple.1' }}>
+          Devconnect. Todos los derechos reservados. 2024
+        </Typography>
+        <Typography variant="body2" sx={{ color: 'purple.1' }}>
+          Términos y condiciones
+        </Typography>
       </Box>
     </Box>
   )
