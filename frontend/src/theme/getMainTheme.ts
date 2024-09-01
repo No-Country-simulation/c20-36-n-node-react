@@ -8,13 +8,13 @@ const palette = {
     2: '#724C9D',
     3: '#320064',
     4: '#DCCAE9',
-    5: '#9356A0'
+    5: '#9356A0',
   },
   green: {
     1: 'green',
   },
   gray: {
-    1:'gray',
+    1: 'gray',
   },
   yellow: {
     1: '#FAED00',
@@ -112,7 +112,7 @@ export const getMainTheme = () =>
       typography: {
         button: {
           textTransform: 'none',
-          fontFamily: 'SuisseIntl',
+          fontFamily: 'Helvetica, Arial, sans-serif',
           fontWeight: 400,
         },
       },
