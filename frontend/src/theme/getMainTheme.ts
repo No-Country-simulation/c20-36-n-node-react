@@ -70,7 +70,7 @@ export const getMainTheme = () =>
           lg: 1200,
           xl: 1536,
           mobile: 0,
-          tablet: 1024,
+          tablet: 768,
           desktop: 1280,
         },
       },

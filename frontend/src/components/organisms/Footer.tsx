@@ -7,8 +7,6 @@ export function Footer() {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        w: 1,
-        // height: { mobile: '200px', tablet: '500px' },
         bgcolor: 'mono.white',
         borderRadius: 6,
         p: 3,
@@ -20,12 +18,11 @@ export function Footer() {
           bgcolor: 'mono.white',
           display: 'flex',
           flexDirection: { mobile: 'column', tablet: 'row' },
-          //   alignItems: { xs: 'center', md: 'flex-start' },
           justifyContent: 'space-between',
           gap: { mobile: 2, desktop: undefined },
         }}
       >
-        <Box sx={{ mb: { xs: 4, md: 0 }, textAlign: { xs: 'center', md: 'left' } }}>
+        <Box sx={{ maxWidth: 250, mb: { mobile: 4, tablet: 0 } }}>
           <Typography
             variant="h6"
             sx={{
@@ -50,9 +47,9 @@ export function Footer() {
         <Box
           sx={{
             display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
-            gap: { xs: 2, md: 4 },
-            textAlign: { xs: 'center', md: 'left' },
+            flexWrap: { mobile: 'wrap', desktop: 'nowrap' },
+            flexDirection: 'row',
+            gap: { mobile: 2, tablet: 4 },
           }}
         >
           <Box>
@@ -115,9 +112,7 @@ export function Footer() {
           display: 'flex',
           flexDirection: { xs: 'column', md: 'row' },
           justifyContent: 'space-between',
-          alignItems: { xs: 'center', md: 'flex-start' },
           py: 2,
-          px: 4,
         }}
       >
         <Typography variant="body2">Devconnect. Todos los derechos reservados. 2024</Typography>
