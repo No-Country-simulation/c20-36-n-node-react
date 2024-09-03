@@ -1,16 +1,15 @@
-import { Box, ThemeProvider, Typography } from "@mui/material";
-import { getMainTheme } from "../../theme/getMainTheme";
+import { ThemeProvider } from '@mui/material'
+import { getMainTheme } from '../../theme/getMainTheme'
+import Navbar from '../../components/Navbar/Navbar'
+import HomeHero from '../../components/HomeHero/HomeHero'
 
 export default function HomeScreen() {
   return (
     <ThemeProvider theme={getMainTheme()}>
+      <Navbar />
       <main>
-        <Box sx={{ width: "100%", maxWidth: 375 }}>
-          <Typography variant="h1" gutterBottom sx={{ color: "mono.white" }}>
-            Hello World
-          </Typography>
-        </Box>
+        <HomeHero />
       </main>
     </ThemeProvider>
-  );
+  )
 }
