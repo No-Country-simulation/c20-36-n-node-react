@@ -13,9 +13,6 @@ const palette = {
   green: {
     1: 'green',
   },
-  gray: {
-    1: 'gray',
-  },
   yellow: {
     1: '#FAED00',
   },
@@ -29,9 +26,6 @@ const palette = {
       2: '#141414',
       3: '#282828',
     },
-  },
-  grey: {
-    1: 'grey',
   },
   text: {
     primary: '#1F242D',

@@ -1,5 +1,18 @@
 // src/components/organisms/RegisterForm.tsx
-import { Box, Button, MenuItem, Modal, TextField, Typography } from '@mui/material'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  InputLabel,
+  ListItemText,
+  MenuItem,
+  Modal,
+  OutlinedInput,
+  Select,
+  TextField,
+  Typography,
+} from '@mui/material'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import { useState } from 'react'
 import * as Yup from 'yup'
@@ -38,6 +51,15 @@ const collaboratorOptions = ['1-3', '4-6', '7-10', 'Indefinido']
 const RegisterForm = () => {
   const [open, setOpen] = useState(false)
   const [confirmationOpen, setConfirmationOpen] = useState(false)
+  const [selectedLanguages, setSelectedLanguages] = useState<string[]>([])
+  const [selectedTools, setSelectedTools] = useState<string[]>([])
+
+  const handleChange = (event: any, setSelected: React.Dispatch<React.SetStateAction<string[]>>) => {
+    const {
+      target: { value },
+    } = event
+    setSelected(typeof value === 'string' ? value.split(',') : value)
+  }
 
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
@@ -74,9 +96,15 @@ const RegisterForm = () => {
           <Typography variant="h6" component="h2">
             Formulario de Registro
           </Typography>
-          <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
-            {() => (
-              <Form>
+          <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={values => {
+              console.log('Form values:', values)
+            }}
+          >
+            {({ errors, touched, handleSubmit }) => (
+              <Form onSubmit={handleSubmit}>
                 <Field
                   as={TextField}
                   name="fullName"
@@ -132,38 +160,47 @@ const RegisterForm = () => {
                   variant="outlined"
                   helperText={<ErrorMessage name="otherSocial" />}
                 />
-                <Field
-                  as={TextField}
-                  name="language"
-                  label="Lenguaje"
-                  select
-                  fullWidth
-                  margin="normal"
-                  variant="outlined"
-                  helperText={<ErrorMessage name="language" />}
-                >
-                  {languages.map(lang => (
-                    <MenuItem key={lang} value={lang}>
-                      {lang}
-                    </MenuItem>
-                  ))}
-                </Field>
-                <Field
-                  as={TextField}
-                  name="tools"
-                  label="Herramientas"
-                  select
-                  fullWidth
-                  margin="normal"
-                  variant="outlined"
-                  helperText={<ErrorMessage name="tools" />}
-                >
-                  {tools.map(tool => (
-                    <MenuItem key={tool} value={tool}>
-                      {tool}
-                    </MenuItem>
-                  ))}
-                </Field>
+                <FormControl fullWidth margin="normal" variant="outlined">
+                  <InputLabel id="languages-label">Lenguajes</InputLabel>
+                  <Select
+                    labelId="languages-label"
+                    id="languages"
+                    multiple
+                    value={selectedLanguages}
+                    onChange={e => handleChange(e, setSelectedLanguages)}
+                    input={<OutlinedInput label="Lenguajes" />}
+                    renderValue={selected => selected.join(', ')}
+                  >
+                    {languages.map(language => (
+                      <MenuItem key={language} value={language}>
+                        <Checkbox checked={selectedLanguages.indexOf(language) > -1} />
+                        <ListItemText primary={language} />
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+                {touched.tools && errors.tools && <Typography color="error">{errors.tools}</Typography>}
+
+                <FormControl fullWidth margin="normal" variant="outlined">
+                  <InputLabel id="tools-label">Herramientas</InputLabel>
+                  <Select
+                    labelId="tools-label"
+                    id="tools"
+                    multiple
+                    value={selectedTools}
+                    onChange={e => handleChange(e, setSelectedTools)}
+                    input={<OutlinedInput label="Herramientas" />}
+                    renderValue={selected => selected.join(', ')}
+                  >
+                    {tools.map(tool => (
+                      <MenuItem key={tool} value={tool}>
+                        <Checkbox checked={selectedTools.indexOf(tool) > -1} />
+                        <ListItemText primary={tool} />
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+                {touched.tools && errors.tools && <Typography color="error">{errors.tools}</Typography>}
                 <Field
                   as={TextField}
                   name="projectType"
