@@ -18,6 +18,7 @@ export default function HomeScreen() {
             Hello World
           </Typography>
         </Box>
+
         <Box sx={{ width: 1 }}>
           <Footer />
         </Box>
