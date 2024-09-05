@@ -126,25 +126,3 @@ export function Footer() {
     </Box>
   )
 }
-
-export function Footersfa() {
-  return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        w: 1,
-        height: { mobile: '200px', tablet: '500px' },
-        bgcolor: 'mono.white',
-        borderRadius: 6,
-        p: 3,
-      }}
-    >
-      <Box>
-        <Box>
-          <Typography sx={{ fontSize: { mobile: 18, desktop: 24 }, fontWeight: 700, color: 'purple.1' }}>DEVCONNECT</Typography>
-        </Box>
-      </Box>
-    </Box>
-  )
-}
