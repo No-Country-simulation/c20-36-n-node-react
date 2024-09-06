@@ -8,13 +8,10 @@ const palette = {
     2: '#724C9D',
     3: '#320064',
     4: '#DCCAE9',
-    5: '#9356A0'
+    5: '#9356A0',
   },
   green: {
     1: 'green',
-  },
-  gray: {
-    1:'gray',
   },
   yellow: {
     1: '#FAED00',
@@ -29,9 +26,6 @@ const palette = {
       2: '#141414',
       3: '#282828',
     },
-  },
-  grey: {
-    1: 'grey',
   },
   text: {
     primary: '#1F242D',
@@ -70,7 +64,7 @@ export const getMainTheme = () =>
           lg: 1200,
           xl: 1536,
           mobile: 0,
-          tablet: 1024,
+          tablet: 768,
           desktop: 1280,
         },
       },
@@ -112,7 +106,7 @@ export const getMainTheme = () =>
       typography: {
         button: {
           textTransform: 'none',
-          fontFamily: 'SuisseIntl',
+          fontFamily: 'Helvetica, Arial, sans-serif',
           fontWeight: 400,
         },
       },
