@@ -39,7 +39,7 @@ export function Footer() {
           </Typography>
           <Box sx={{ display: 'flex', gap: 1 }}>
             <TextField placeholder="Enter your email" variant="outlined" size="small" sx={{ flexGrow: 1 }} />
-            <Button variant="contained" color="primary">
+            <Button variant="contained" sx={{ bgcolor: 'purple.3', '&:hover': { backgroundColor: 'purple.2', color: 'mono.white' } }}>
               →
             </Button>
           </Box>
@@ -57,15 +57,15 @@ export function Footer() {
             <Typography variant="h6" sx={{ color: 'purple.1', fontWeight: 'bold' }}>
               Empresa
             </Typography>
-            <Link href="#" underline="none">
+            <Link href="#" underline="none" sx={{ color: 'inherit' }}>
               Inicio
             </Link>
             <br />
-            <Link href="#" underline="none">
+            <Link href="#" underline="none" sx={{ color: 'inherit' }}>
               Contacto
             </Link>
             <br />
-            <Link href="#" underline="none">
+            <Link href="#" underline="none" sx={{ color: 'inherit' }}>
               Nosotros
             </Link>
           </Box>
@@ -74,15 +74,15 @@ export function Footer() {
             <Typography variant="h6" sx={{ color: 'purple.1', fontWeight: 'bold' }}>
               Documentación
             </Typography>
-            <Link href="#" underline="none">
+            <Link href="#" underline="none" sx={{ color: 'inherit' }}>
               Centro de ayuda
             </Link>
             <br />
-            <Link href="#" underline="none">
+            <Link href="#" underline="none" sx={{ color: 'inherit' }}>
               FAQ
             </Link>
             <br />
-            <Link href="#" underline="none">
+            <Link href="#" underline="none" sx={{ color: 'inherit' }}>
               Políticas
             </Link>
           </Box>
@@ -91,15 +91,15 @@ export function Footer() {
             <Typography variant="h6" sx={{ color: 'purple.1', fontWeight: 'bold' }}>
               Social
             </Typography>
-            <Link href="#" underline="none" target="_blank">
+            <Link href="#" underline="none" sx={{ color: 'inherit' }} target="_blank">
               Facebook
             </Link>
             <br />
-            <Link href="#" underline="none" target="_blank">
+            <Link href="#" underline="none" sx={{ color: 'inherit' }} target="_blank">
               Instagram
             </Link>
             <br />
-            <Link href="#" underline="none" target="_blank">
+            <Link href="#" underline="none" sx={{ color: 'inherit' }} target="_blank">
               YouTube
             </Link>
           </Box>
