@@ -1,20 +1,18 @@
 // src/components/organisms/RegisterForm.tsx
 import { Box, Button, Modal, TextField, Typography } from '@mui/material'
 import { useFormik } from 'formik'
-import { useState } from 'react'
-import * as Yup from 'yup'
+import { useRegisterForm } from '../../hooks/useRegisterForm'
 
-const validationSchema = Yup.object({
-  fullName: Yup.string().required('Nombre y apellido es requerido'),
-  email: Yup.string().email('Correo electrónico inválido').required('Correo electrónico es requerido'),
-  password: Yup.string().min(6, 'Debe tener al menos 6 caracteres').max(18, 'Debe tener menos de 18 caracteres').required('Contraseña es requerida'),
-  github: Yup.string().url('Debe ser una URL válida').required('Cuenta de GitHub es requerida'),
-  linkedIn: Yup.string().url('Debe ser una URL válida'),
-})
-
-const RegisterForm = () => {
-  const [open, setOpen] = useState(false)
-  const [confirmationOpen, setConfirmationOpen] = useState(false)
+export const RegisterForm = () => {
+  const {
+    openRegisterForm,
+    setOpenRegisterForm,
+    confirmationOpenRegisterForm,
+    setConfirmationOpenRegisterForm,
+    handleOpenRegisterForm,
+    handleCloseRegisterForm,
+    validationRegisterSchema,
+  } = useRegisterForm()
 
   const formik = useFormik({
     initialValues: {
@@ -24,23 +22,20 @@ const RegisterForm = () => {
       github: '',
       linkedIn: '',
     },
-    validationSchema: validationSchema,
+    validationSchema: validationRegisterSchema,
     onSubmit: values => {
       console.log('Form Values:', values)
-      setConfirmationOpen(true)
-      setOpen(false)
+      setConfirmationOpenRegisterForm(true)
+      setOpenRegisterForm(false)
     },
   })
 
-  const handleOpen = () => setOpen(true)
-  const handleClose = () => setOpen(false)
-
   return (
     <>
-      <Button onClick={handleOpen} variant="contained">
+      <Button onClick={handleOpenRegisterForm} variant="contained">
         Registro
       </Button>
-      <Modal open={open} onClose={handleClose}>
+      <Modal open={openRegisterForm} onClose={handleCloseRegisterForm}>
         <Box
           sx={{
             position: 'absolute',
@@ -119,7 +114,7 @@ const RegisterForm = () => {
           </form>
         </Box>
       </Modal>
-      <Modal open={confirmationOpen} onClose={() => setConfirmationOpen(false)}>
+      <Modal open={confirmationOpenRegisterForm} onClose={() => setConfirmationOpenRegisterForm(false)}>
         <Box
           sx={{
             position: 'absolute',
@@ -142,7 +137,7 @@ const RegisterForm = () => {
           </Typography>
           <Typography>Hemos registrado tu solicitud!!</Typography>
           <Typography>Verifica tu email y edita tu perfil en busca de coincidencias para networking.</Typography>
-          <Button onClick={() => setConfirmationOpen(false)} variant="contained">
+          <Button onClick={() => setConfirmationOpenRegisterForm(false)} variant="contained">
             Cerrar
           </Button>
         </Box>
@@ -150,5 +145,3 @@ const RegisterForm = () => {
     </>
   )
 }
-
-export default RegisterForm
