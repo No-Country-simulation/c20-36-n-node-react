@@ -30,14 +30,14 @@ module.exports = (sequelize) => {
     email: {
       type: DataTypes.STRING,
       allowNull: false,  
-  },
-  password: {
-      type: DataTypes.STRING,
-      allowNull: true, // revisar luego👀
-  },
-  biography: {
-      type: DataTypes.STRING,
-      allowNull: true,
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: true, // revisar luego👀
+    },
+    biography: {
+        type: DataTypes.STRING,
+        allowNull: true,
     },
     photo: {
       type: DataTypes.STRING,
@@ -47,8 +47,8 @@ module.exports = (sequelize) => {
           args: true,
           msg: "Debe ser una URL valida",
         }
-      }},
-      address: {
+    }},
+    address: {
         type: DataTypes.STRING,
         allowNull: true,
     },

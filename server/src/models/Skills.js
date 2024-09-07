@@ -15,21 +15,18 @@ module.exports = (sequelize) => {
                 key: 'userID',
             },
         },
-        languagesID: {
-            type: DataTypes.UUID, 
+        name:{
+            type: DataTypes.STRING,
             allowNull: false,
-            references: {
-                model: 'Languages',
-                key: 'languagesID',
-            },
+            comment:'Stack ejemplo frontend, backend, devops, tester'
         },
-        frameworksID: {
-            type: DataTypes.UUID, 
-            allowNull: false,
-            references: {
-                model: 'Frameworks',
-                key: 'frameworksID',
-            },
+        level:{
+            type:DataTypes.STRING,
+            allowNull:false,
+            comment:'ejemplo basico, intermedio, avanzado, experto'
         },
+        years_of_experience:{
+            type:DataTypes.INTEGER,
+        }
     },{timestamps:false});
 };
