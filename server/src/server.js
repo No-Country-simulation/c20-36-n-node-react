@@ -1,6 +1,6 @@
 const express = require("express");
-const mainRouter = require("./routes/mainRouter");
-
+const apiRoutes = require("./routes");
+const resError = require("./utils/resError")
 const cors = require("cors");
 
 const server = express();
@@ -9,6 +9,15 @@ const server = express();
 server.use(express.json());
 server.use(cors());
 
-server.use(mainRouter);
-
+server.use('/api/v1',apiRoutes);
+server.all('*',(req,res,next)=>{
+    res.status(400).json({
+        status:'fail',
+        message:`Can't find ${req.originalUrl} on the server!`
+    })
+})
+server.use((err,req,res,next)=>{
+    const {statusCode,message}=err
+    resError(res,statusCode,message)
+})
 module.exports = server;
