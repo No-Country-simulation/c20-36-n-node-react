@@ -1,4 +1,5 @@
 const { DataTypes } = require('sequelize');
+const { default: isURL } = require('validator/lib/isURL');
 // Exportamos una funcion que define el modelo
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
@@ -20,7 +21,7 @@ module.exports = (sequelize) => {
     }},
     lastName:{
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
       validate:{
       len: {
         args: [3, 20],
@@ -33,7 +34,27 @@ module.exports = (sequelize) => {
     },
     password: {
         type: DataTypes.STRING,
-        allowNull: true, // revisar luego👀
+        allowNull: false, // revisar luego👀
+    },
+    urlGitHub:{
+      type:DataTypes.STRING,
+      allowNull:false,
+      validate:{
+        isUrl:{
+          args:true,
+          msg:"Debe ser una URL valida"
+        }
+      }
+    },
+    urlLinkedIn:{
+      type:DataTypes.STRING,
+      allowNull:true,
+      validate:{
+        isUrl:{
+          args:true,
+          msg:"Debe ser una URL valida"
+        }
+      }
     },
     biography: {
         type: DataTypes.STRING,
@@ -41,7 +62,7 @@ module.exports = (sequelize) => {
     },
     photo: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue:"https://png.pngtree.com/png-clipart/20210311/original/pngtree-customer-login-avatar-png-image_6015290.jpg",
       validate: {
         isUrl:{
           args: true,
