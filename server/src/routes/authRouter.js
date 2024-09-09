@@ -10,7 +10,7 @@ const authRouter = express.Router();
 //configuramos rutas:
 // Ejemplo: mainRouter.use("/", );
 
-authRouter.get('/login',validation,login)
+authRouter.post('/login',validation,login)
 authRouter.post('/register',validation,register)
 
 module.exports = authRouter;
