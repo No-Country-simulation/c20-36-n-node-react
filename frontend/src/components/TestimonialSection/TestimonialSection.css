@@ -1,0 +1,100 @@
+.testimonial-container {
+    max-width: 100%;
+    padding: 20px;
+    background-color: #0b0205;
+  }
+  
+.testimonial-title{
+  color: white;
+}
+
+.testimonial-text{
+  color: whitesmoke;
+}
+
+  .testimonial-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dccae9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .testimonial-navigation {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .testimonial-nav-button {
+    background-color: #282828;
+    border: solid 1px #9356A0;
+    padding: 5px;
+    border-radius: 5px;
+    color: whitesmoke;
+  }
+  
+  .testimonial-swiper {
+    padding-top: 20px;
+  }
+  
+  .review-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #282828;
+    border: solid 2px #9356A0;
+  }
+  
+  .review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .review-name {
+    color: white;
+    font-size: 1.25rem;
+  }
+  
+  .review-designation {
+    color: whitesmoke;
+    font-size: 0.875rem;
+    margin-left: 1rem;
+  }
+  
+  .review-social-links {
+    display: flex;
+    gap: 12px;
+    margin-right: 1rem;
+  }
+  
+  .social-link {
+    color: #9356A0;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .review-stars {
+    display: flex;
+    gap: 4px;
+    margin-left: 1rem;
+  }
+  
+  .star-filled {
+    color: #9356A0;
+    opacity: 1;
+  }
+  
+  .star-empty {
+    color: #9356A0;
+    opacity: 0.3;
+  }
+  
+  .review-text {
+    color: whitesmoke;
+    margin: 1rem;
+  }
+  
+  .review-count{
+    color:#dccae9;
+  }
+  
