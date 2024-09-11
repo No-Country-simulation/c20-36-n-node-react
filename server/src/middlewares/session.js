@@ -1,20 +1,15 @@
-const ApiError=require('../utils/ApiError')
-const {verifyToken}=require('../utils/handleJwt')
-const authMiddleware = async(req,res,next)=>{
-    try {
-        if (!req.cookies) {
-          throw new ApiError("INVALID_TOKEN");
-        }
-        const token = req.cookies.jwt
-        const tokenData=await verifyToken(token)
-        if(!tokenData._id){
-            throw new ApiError('INVALID_TOKEN')
-        }
-        next()
-    }
-    catch (error) {
-        throw new ApiError('EXPIRED OR INCORRETC TOKEN')
-    }
-}
+const resError = require("../utils/handleError");
+const { verifyToken } = require("../utils/handleJwt");
+const authMiddleware = async (req, res, next) => {
+  const {jwt}=req.cookies
+  if(!jwt){
+    resError(res, 401, "does not have a token")
+  }
+  const tokenData= await verifyToken(jwt)
+  if(!tokenData){
+    resError(res, 402, "Incorrect or Expired Token")
+  }
+  next()
+};
 
-module.exports = authMiddleware
+module.exports = authMiddleware;

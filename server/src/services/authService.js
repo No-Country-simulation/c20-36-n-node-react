@@ -7,7 +7,7 @@ class AuthService{
     async registerUser(data){
         const userExisting=await Users.findOne({where:{email:data.email}})
         if (userExisting){
-            throw new ClientError("Usuario ya registrado")
+            throw new ClientError("User already registered");
         }
         const hashedPassword=await encrypt(data.password)
         const userRegistrerData={
@@ -20,7 +20,7 @@ class AuthService{
     async loginUser(dataUser){
         const user=await Users.findOne({where:{email:dataUser.email}})
         if(!user){
-            throw new ClientError("El usuario no existe")
+            throw new ClientError("User does not exist");
         }
         const data={
             token:await tokenSing(user),
