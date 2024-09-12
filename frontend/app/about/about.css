@@ -1,0 +1,166 @@
+/* About Section */
+.about-container {
+    max-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    background-color: #0b0205;
+  }
+  
+  @media (min-width: 768px) {
+    .about-container {
+      flex-direction: row;
+    }
+  }
+  
+  .about-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: calc(300px + 20vw);
+  }
+  
+  @media (min-width: 768px) {
+    .about-image-wrapper {
+      width: 50%;
+      height: 600px;
+    }
+  }
+  
+  .about-image {
+    object-fit: cover;
+    height: 600px;
+  }
+  
+  .about-content {
+    width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .about-content {
+      width: 50%;
+    }
+  }
+  
+  .about-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    .about-intro {
+      text-align: left;
+    }
+  }
+  
+  .about-welcome {
+    padding: 4px 8px;
+    color: whitesmoke;
+    border-radius: 5px;
+    margin: auto;
+  }
+  
+  .about-title {
+    color: white;
+  }
+  
+  .about-description {
+    color: whitesmoke;
+  }
+  
+  /* Stats Section */
+  .about-stats {
+    border-top: 2px solid #9356A0;
+    border-bottom: 2px solid #9356A0;
+    padding: 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .about-stats {
+      flex-direction: row;
+      background-color: transparent;
+      margin-top: 60px;
+      padding: 40px 0;
+    }
+  }
+  
+  .stat-item {
+    text-align: center;
+  }
+  
+  .stat-number {
+    color: whitesmoke;
+    margin-bottom: 0;
+  }
+  
+  .stat-plus {
+    color: #9356A0;
+  }
+  
+  .stat-text  {
+    color: whitesmoke;
+    margin-top: 0;
+  }
+  
+  
+  /* Benefits Section */
+.benefits {
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background-color: #0b0205;
+
+}
+
+.benefits-grid {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  
+}
+
+.first-row {
+  grid-template-columns: repeat(2, 1fr);
+  
+}
+
+
+.second-row {
+  grid-template-columns: repeat(3, 1fr);
+  
+}
+
+@media (min-width: 768px) {
+  .benefits-grid {
+    gap: 1.5rem;
+  }
+
+  .first-row {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.benefit-box {
+  background-color: #282828;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  border: solid 2px #9356A0;
+  color: whitesmoke;
+}
+
+.benefit-title {
+  color: var(--grey-700);
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.benefit-description {
+  color: whitesmoke;
+  font-size: 1rem;
+}

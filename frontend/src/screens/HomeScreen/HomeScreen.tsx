@@ -1,14 +1,22 @@
-import { ThemeProvider } from '@mui/material'
+import { Box, ThemeProvider, Typography } from '@mui/material'
+import { Footer } from '../../components/organisms/Footer'
+import { RegisterForm } from '../../components/organisms/RegisterFrom'
+import { ProfileForm } from '../../forms/ProfileForm'
 import { getMainTheme } from '../../theme/getMainTheme'
-import Navbar from '../../components/Navbar/Navbar'
-import HomeHero from '../../components/HomeHero/HomeHero'
 
 export default function HomeScreen() {
   return (
     <ThemeProvider theme={getMainTheme()}>
       <Navbar />
       <main>
-        <HomeHero />
+        <Box sx={{ width: '100%', maxWidth: 375 }}>
+          <Typography variant="h1" gutterBottom sx={{ color: 'mono.white' }}>
+            Hello World
+          </Typography>
+        </Box>
+        <RegisterForm />
+        <ProfileForm />
+        <Footer />
       </main>
     </ThemeProvider>
   )
