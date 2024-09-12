@@ -1,6 +1,8 @@
+const {Users} = require('../db')
 class userService {
-    async userMe(){
-        return 'soy user me'
+    async userMe(id){
+        const userData=await Users.findOne({where:{userID:id}})
+        return userData
     }
     async userUpdate(){
         return 'soy update'
