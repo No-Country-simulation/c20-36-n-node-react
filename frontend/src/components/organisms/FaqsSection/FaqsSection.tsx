@@ -1,4 +1,4 @@
-import { faqs } from '../../../constants/index'
+import { faqs } from '../../../constants'
 import Accordion from '../Accordion/Accordion'
 import './FaqsSection.css'
 
