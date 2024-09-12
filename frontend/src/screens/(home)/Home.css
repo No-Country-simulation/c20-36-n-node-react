@@ -1,5 +1,7 @@
 .home {
     background-color: #0b0205;
+    padding: 0;
+    margin: 0;
   }
   
   .hero {
@@ -7,8 +9,11 @@
     color: white;
     text-align: center;
     background-image: url("../../src/assets/baner6.jpeg");
+    width: 100%;
     max-width: 100%;
     height: 100vh;
+    padding: 0;
+    margin: 0;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

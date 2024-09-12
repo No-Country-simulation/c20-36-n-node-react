@@ -30,5 +30,13 @@
     "noErrorTruncation": true,
     "resolveJsonModule": true
   },
-  "include": ["src", ".vscode/conflictus/LoginForm", ".vscode/conflictus/TestimonialSection", ".vscode/conflictus/LoginForm2", "src/screens/about"]
+  "include": [
+    "src",
+    ".vscode/conflictus/LoginForm",
+    ".vscode/conflictus/TestimonialSection",
+    ".vscode/conflictus/LoginForm2",
+    "src/screens/about",
+    ".vscode/build-general-ui/original-components/HomeDiego.tsx",
+    "src/screens/(home)/Home.tsx"
+  ]
 }

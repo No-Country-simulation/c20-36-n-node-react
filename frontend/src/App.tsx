@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@mui/material'
+import { Home } from '../.vscode/build-general-ui/original-components/HomeDiego'
 import './App.css'
-import { Home } from './screens/Home'
 import { getMainTheme } from './theme/getMainTheme'
 
 function App() {
@@ -11,4 +11,4 @@ function App() {
   )
 }
 
-export default App;
+export default App

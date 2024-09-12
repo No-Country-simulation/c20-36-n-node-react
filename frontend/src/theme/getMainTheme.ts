@@ -1,4 +1,4 @@
-import { createTheme, responsiveFontSizes } from '@mui/material'
+import { alpha, createTheme, responsiveFontSizes } from '@mui/material'
 
 const palette = {
   type: 'light',
@@ -9,6 +9,13 @@ const palette = {
     3: '#320064',
     4: '#DCCAE9',
     5: '#9356A0',
+  },
+  purpleAlpha: {
+    1: alpha('#2C1B47', 0.7),
+    2: alpha('#724C9D', 0.7),
+    3: alpha('#320064', 0.7),
+    4: alpha('#DCCAE9', 0.7),
+    5: alpha('#9356A0', 0.7),
   },
   green: {
     1: 'green',

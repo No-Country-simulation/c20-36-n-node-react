@@ -1,9 +1,9 @@
-import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem, Button, Box } from '@mui/material'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
-import { NavLink, useLocation } from 'react-router-dom'
 import CloseIcon from '@mui/icons-material/Close'
 import MenuIcon from '@mui/icons-material/Menu'
+import { AppBar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import { useState } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
 
 const pages = [
   {
@@ -38,12 +38,12 @@ export default function Navbar() {
 
   return (
     <AppBar
-      position="static"
+      position="fixed"
       sx={{
-        backgroundColor: '#0D051F',
+        backgroundColor: 'purpleAlpha.5',
         border: '1px solid #241943',
         width: '95%',
-        margin: '20px auto 0',
+        margin: '24px 24px 0',
         borderRadius: '35px',
       }}
     >
@@ -55,7 +55,7 @@ export default function Navbar() {
           </Typography>
         </Typography>
 
-        <Box sx={{ display: { xs: 'none', md: 'flex' } }} component="nav" aria-label="main navigation">
+        <Box sx={{ display: { mobile: 'none', tablet: 'flex' } }} component="nav" aria-label="main navigation">
           {pages.map(page => (
             <MenuItem key={page.id} component={NavLink} to={page.path}>
               {page.name}
@@ -63,7 +63,7 @@ export default function Navbar() {
           ))}
         </Box>
 
-        <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+        <Box sx={{ display: { mobile: 'flex', tablet: 'none' } }}>
           <IconButton size="large" edge="start" color="inherit" aria-label={menuAnchor ? 'Cerrar menú' : 'Abrir menú'} onClick={handleMenuOpen}>
             {menuAnchor ? <CloseIcon /> : <MenuIcon />}
           </IconButton>

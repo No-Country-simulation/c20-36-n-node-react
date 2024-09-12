@@ -1,28 +1,25 @@
-import Intro from '../../src/components/Intro/Intro';
-import TestimonialSection from '../../src/components/TestimonialSection/TestimonialSection';
-import "./Home.css";
+import { Box } from '@mui/material'
+import { Footer } from '../../components/organisms/Footer'
+import HomeHero from '../../components/organisms/HomeHero/HomeHero'
+import Intro from '../../components/organisms/Intro/Intro'
+import Navbar from '../../components/organisms/Navbar/Navbar'
+import TestimonialSection from '../../components/organisms/TestimonialSection/TestimonialSection'
+import './Home.css'
 
 const Home = () => {
   return (
-    <section className="home">
-      <div className="hero">
-        <div className="hero-content">
-          <div className="hero-title-wrapper">
-            <h1 className="hero-title-left">Descubre</h1>
-            <h1 className="hero-title-right">Devconnect</h1>
-          </div>
-          <div className="hero-text-wrapper">
-            <p className="hero-text">
-              Conecta con programadores, colabora en proyectos desafiantes y construye una comunidad sólida.
-            </p>
-            <button className="hero-button">Regístrate</button>
-          </div>
-        </div>
-      </div>
+    <Box className="home">
+      <Box className="hero" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Box sx={{ display: 'flex' }}>
+          <Navbar />
+        </Box>
+        <HomeHero />
+      </Box>
       <Intro />
       <TestimonialSection />
-    </section>
-  );
-};
+      <Footer />
+    </Box>
+  )
+}
 
-export default Home;
+export default Home
