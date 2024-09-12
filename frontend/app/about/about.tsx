@@ -10,7 +10,7 @@ const about = () => {
     <>
       <section className="about-container">
         <div className="about-image-wrapper">
-        <img src="../../src/assets/Designer.jpeg" alt="about img" className="about-image" data-aos="fade-left" data-aos-delay="300" />
+        <img src="../../src/assets/about-img.png" alt="about img" className="about-image" data-aos="fade-left" data-aos-delay="300" />
         </div>
         <div className="about-content">
           <div className="about-intro">

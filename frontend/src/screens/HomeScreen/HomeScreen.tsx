@@ -3,6 +3,7 @@ import { Footer } from '../../components/organisms/Footer'
 import { RegisterForm } from '../../components/organisms/RegisterFrom'
 import { ProfileForm } from '../../forms/ProfileForm'
 import { getMainTheme } from '../../theme/getMainTheme'
+import { Contact } from '../../../app/contact/Contact'
 
 export default function HomeScreen() {
   return (
@@ -16,6 +17,7 @@ export default function HomeScreen() {
         <RegisterForm />
         <ProfileForm />
         <Footer />
+        <Contact />
       </main>
     </ThemeProvider>
   )
