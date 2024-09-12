@@ -1,7 +1,7 @@
 :root {
-  --dark-bg: #080808;
+  --dark-purple: #13072e;
 }
 
 body {
-  background-color: var(--dark-bg);
+  background-color: var(--dark-purple);
 }
