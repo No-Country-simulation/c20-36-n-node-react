@@ -12,7 +12,6 @@ const register=catchAsync(async(req,res)=>{
 const login=catchAsync(async(req,res)=>{
     const data=req.body
     const login=await authService.loginUser(data)
-    const {user}=login
     res.cookie('jwt',login.token)
     res.status(httpStatus.CREATED).json({error:false,data:"successful login"})
 })

@@ -9,6 +9,7 @@ const authMiddleware = async (req, res, next) => {
   if(!tokenData){
     resError(res, 402, "Incorrect or Expired Token")
   }
+  req.body=tokenData
   next()
 };
 

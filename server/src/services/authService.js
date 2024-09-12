@@ -1,5 +1,5 @@
 const {Users} = require('../db')
-const {encrypt,compare}=require('../utils/handlePassword')
+const {encrypt}=require('../utils/handlePassword')
 const {tokenSing}=require('../utils/handleJwt')
 const ClientError=require('../utils/ApiError')
 

@@ -86,6 +86,8 @@ module.exports = (sequelize) => {
   {
     freezeTableName: true,
     timestamps: false,
-
+    defaultScope:{
+      attributes: {exclude:['password']}
+    }
   });
 };
