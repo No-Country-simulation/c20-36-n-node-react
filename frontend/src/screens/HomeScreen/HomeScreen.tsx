@@ -1,7 +1,7 @@
 import { Box, ThemeProvider, Typography } from '@mui/material'
 import { Footer } from '../../components/organisms/Footer'
-import { RegisterForm } from '../../components/organisms/RegisterFrom'
 import { ProfileForm } from '../../forms/ProfileForm'
+import { RegisterForm } from '../../forms/RegisterFrom'
 import { getMainTheme } from '../../theme/getMainTheme'
 
 export default function HomeScreen() {
