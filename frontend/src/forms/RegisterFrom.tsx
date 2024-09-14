@@ -1,7 +1,7 @@
 // src/components/organisms/RegisterForm.tsx
 import { Box, Button, Modal, TextField, Typography } from '@mui/material'
 import { useFormik } from 'formik'
-import { useRegisterForm } from '../../hooks/useRegisterForm'
+import { useRegisterForm } from '../hooks/useRegisterForm'
 
 export const RegisterForm = () => {
   const {

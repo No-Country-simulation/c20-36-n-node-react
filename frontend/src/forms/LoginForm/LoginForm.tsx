@@ -1,9 +1,9 @@
-import { Box, TextField, Button, Link, Typography, ThemeProvider } from '@mui/material'
-import ErrorMessageLogin from './ErrorMessageLogin/ErrorMessageLogin'
+import { Box, Button, Link, TextField, ThemeProvider, Typography } from '@mui/material'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { getMainTheme } from '../../theme/getMainTheme'
 import { NavLink } from 'react-router-dom'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../../components/organisms/Navbar/Navbar'
+import { getMainTheme } from '../../theme/getMainTheme'
+import ErrorMessageLogin from './ErrorMessageLogin/ErrorMessageLogin'
 
 type FormValues = {
   username: string
