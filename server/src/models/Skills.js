@@ -9,7 +9,7 @@ module.exports = (sequelize) => {
         },
         userID: {
             type: DataTypes.UUID, 
-            allowNull: false,
+            allowNull: true,
             references: {
                 model: 'Users',
                 key: 'userID',
@@ -27,6 +27,16 @@ module.exports = (sequelize) => {
         },
         years_of_experience:{
             type:DataTypes.INTEGER,
+        },
+        languages: {
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            defaultValue: ["javascript"],
+            allowNull: true,
+        },
+        frameworks:{
+            type:DataTypes.ARRAY(DataTypes.STRING),
+            defaultValue:["react"],
+            allowNull:true
         }
     },{timestamps:false});
 };

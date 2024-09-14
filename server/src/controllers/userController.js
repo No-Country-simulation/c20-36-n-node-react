@@ -8,7 +8,7 @@ const userGet = catchAsync(async (req, res) => {
   res.status(httpStatus.CREATED).json({ error:false,data: response });
 });
 
-const userMeUpdate = async (req, res) => {
+const userMeUpdate = catchAsync(async (req, res) => {
   const {_id} = req.body.tokenData;
   const data=Object.fromEntries(
     Object.entries(req.body).filter(([key])=>key !== 'tokenData')
@@ -19,7 +19,7 @@ const userMeUpdate = async (req, res) => {
   }
   const updateUser=await userService.userMe(_id)
   res.status(httpStatus.CREATED).json({ error: false, data:updateUser });
-};
+})
 module.exports = {
   userGet,
   userMeUpdate,
