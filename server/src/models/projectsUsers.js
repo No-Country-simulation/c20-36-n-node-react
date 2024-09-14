@@ -20,7 +20,7 @@ module.exports=(sequalize)=>{
         },
         role:{
             type:DataTypes.STRING,
-            comment:'rol del usuario enm el proyecto'
+            comment:'rol del usuario en el proyecto'
         }
     });
 };
