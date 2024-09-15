@@ -42,9 +42,8 @@ export default function Navbar() {
       sx={{
         backgroundColor: 'purpleAlpha.5',
         border: '1px solid #241943',
-        width: '95%',
-        margin: '24px 24px 0',
-        borderRadius: '35px',
+        width: '100%',
+        m: 0,
       }}
     >
       <Toolbar>
