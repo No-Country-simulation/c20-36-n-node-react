@@ -5,6 +5,8 @@ import { Dashboard } from '../screens/Dashborad/Dashboard'
 import HomeScreen from '../screens/HomeScreen/HomeScreen'
 import LoginScreen from '../screens/LoginScreen/LoginScreen'
 import RegisterScreen from '../screens/RegisterScreen/RegisterScreen'
+import About from '../screens/about/about'
+import { Contact } from '../screens/contact/Contact'
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +18,9 @@ export const router = createBrowserRouter([
       { path: '/register', element: <RegisterScreen /> },
       // { path: '/dashboard', element: <Dashboard /> },
       { path: '/dashboard/profile', element: <Dashboard /> },
+      { path: '/dashboard/profile', element: <ProfileEditForm /> },
+      { path: '/contact', element: <Contact /> },
+      { path: '/about', element: <About /> },
       { path: '/dashboard/profile', element: <ProfileEditForm /> },
     ],
   },

@@ -1,18 +1,12 @@
 // src/components/organisms/RegisterForm.tsx
 import { Box, Button, Modal, TextField, Typography } from '@mui/material'
 import { useFormik } from 'formik'
+import { useNavigate } from 'react-router-dom'
 import { useRegisterForm } from '../hooks/useRegisterForm'
 
 export const RegisterForm = () => {
-  const {
-    openRegisterForm,
-    setOpenRegisterForm,
-    confirmationOpenRegisterForm,
-    setConfirmationOpenRegisterForm,
-    handleOpenRegisterForm,
-    handleCloseRegisterForm,
-    validationRegisterSchema,
-  } = useRegisterForm()
+  const navigate = useNavigate()
+  const { setOpenRegisterForm, confirmationOpenRegisterForm, setConfirmationOpenRegisterForm, validationRegisterSchema } = useRegisterForm()
 
   const formik = useFormik({
     initialValues: {
@@ -28,15 +22,15 @@ export const RegisterForm = () => {
       setOpenRegisterForm(false)
     },
   })
+  const handleConfirmationRegisterForm = () => {
+    setConfirmationOpenRegisterForm(false)
+    navigate('/dashboard/profile')
+  }
 
   return (
-    <Box>
+    <Box sx={{ display: 'flex', flexDirection: 'row', py: { mobile: 3, tablet: 5 }, justifyContent: 'center' }}>
       <Box
         sx={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
           width: 400,
           bgcolor: 'background.paper',
           boxShadow: 24,
@@ -120,7 +114,7 @@ export const RegisterForm = () => {
           </Typography>
           <Typography>Hemos registrado tu solicitud!!</Typography>
           <Typography>Verifica tu email y edita tu perfil en busca de coincidencias para networking.</Typography>
-          <Button onClick={() => setConfirmationOpenRegisterForm(false)} variant="contained">
+          <Button onClick={handleConfirmationRegisterForm} variant="contained">
             Cerrar
           </Button>
         </Box>
