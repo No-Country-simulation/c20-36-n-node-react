@@ -8,11 +8,11 @@ import { Header } from '../../molecules/Header/Header'
 const MainLayout: React.FC = () => {
   return (
     <ThemeProvider theme={getMainTheme}>
-      <Box sx={{ bgcolor: 'mono.black.1', p: 0, m: 0 }}>
+      <Box sx={{ p: 0, m: 0 }}>
         <Header />
-        <main>
+        <Box sx={{ mt: 8 }}>
           <Outlet /> {/* Aquí se renderiza el componente de la página actual */}
-        </main>
+        </Box>
         <Footer />
       </Box>
     </ThemeProvider>

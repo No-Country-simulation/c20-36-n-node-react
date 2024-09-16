@@ -76,6 +76,21 @@ export const getMainTheme = () =>
         },
       },
       palette,
+      customStyles: {
+        backgroundLayout: {
+          position: 'relative',
+          color: 'white',
+          textAlign: 'center',
+          heigth: '100%',
+          maxWidth: '100%',
+          padding: 0,
+          margin: 0,
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          backgroundAttachment: 'fixed',
+        },
+      },
       layout: {
         contentWidth: 1236,
       },
@@ -116,10 +131,6 @@ export const getMainTheme = () =>
           fontFamily: 'Helvetica, Arial, sans-serif',
           fontWeight: 400,
         },
-      },
-      zIndex: {
-        appBar: 1200,
-        drawer: 1100,
       },
     }),
   )
