@@ -6,11 +6,8 @@ export const useProfileEditForm = () => {
   const [confirmationOpenProfileEditForm, setConfirmationOpenProfileEditForm] = useState(false)
 
   const handleOpenProfileEditForm = () => {
-    console.log('activate handle???')
     setOpenProfileEditForm(true)
-    console.log(openProfileEditForm)
   }
-  console.log(openProfileEditForm)
   const handleCloseProfileEditForm = () => setOpenProfileEditForm(false)
 
   const validationProfileSchema = Yup.object({
