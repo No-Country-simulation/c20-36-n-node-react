@@ -38,7 +38,6 @@ export default function Navbar() {
 
   return (
     <AppBar
-      position="fixed"
       sx={{
         backgroundColor: 'purpleAlpha.5',
         border: '1px solid #241943',
@@ -68,7 +67,7 @@ export default function Navbar() {
           </IconButton>
         </Box>
 
-        <Menu anchorEl={menuAnchor} open={Boolean(menuAnchor)} onClose={handleMenuClose} sx={{ display: { xs: 'block', md: 'none' } }}>
+        <Menu anchorEl={menuAnchor} open={Boolean(menuAnchor)} onClose={handleMenuClose} sx={{ display: { mobile: 'block', tablet: 'none' } }}>
           {pages.map(page => (
             <MenuItem key={page.id} component={NavLink} to={page.path} onClick={handleMenuClose}>
               {page.name}
