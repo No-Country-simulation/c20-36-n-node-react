@@ -1,4 +1,4 @@
-// src/components/organisms/ProfileForm.tsx
+// src/components/organisms/ProfileEditForm.tsx
 import {
   Box,
   Button,
@@ -15,24 +15,22 @@ import {
 } from '@mui/material'
 import { useFormik } from 'formik'
 import { COLLABORATOR_OPTIONS, LANGUAGES, PROYECT_TYPES, TOOLS } from '../constants/constants'
-import { useProfileForm } from '../hooks/useProfileForm'
+import { useProfileEditForm } from '../hooks/useProfileForm'
 
-export const ProfileForm = () => {
+export const ProfileEditForm = ({ open = false, close = false }) => {
   const {
-    openProfileForm,
-    setOpenProfileForm,
-    confirmationOpenProfileForm,
-    setConfirmationOpenProfileForm,
-    handleOpenProfileForm,
-    handleCloseProfileForm,
+    openProfileEditForm,
+    setOpenProfileEditForm,
+    confirmationOpenProfileEditForm,
+    setConfirmationOpenProfileEditForm,
     validationProfileSchema,
-  } = useProfileForm()
+  } = useProfileEditForm()
+  console.log('value open in form', openProfileEditForm)
 
   const formik = useFormik({
     initialValues: {
       fullName: '',
       email: '',
-      password: '',
       github: '',
       linkedIn: '',
       otherSocial: '',
@@ -44,17 +42,14 @@ export const ProfileForm = () => {
     validationSchema: validationProfileSchema,
     onSubmit: values => {
       console.log('Form Values:', values)
-      setConfirmationOpenProfileForm(true)
-      setOpenProfileForm(false)
+      setConfirmationOpenProfileEditForm(true)
+      setOpenProfileEditForm(false)
     },
   })
 
   return (
-    <>
-      <Button onClick={handleOpenProfileForm} variant="contained">
-        Editar Perfil
-      </Button>
-      <Modal open={openProfileForm} onClose={handleCloseProfileForm}>
+    <Box>
+      <Modal open={open} onClose={close}>
         <Box
           sx={{
             position: 'absolute',
@@ -94,17 +89,6 @@ export const ProfileForm = () => {
               onChange={formik.handleChange}
               error={formik.touched.email && Boolean(formik.errors.email)}
               helperText={formik.touched.email && formik.errors.email}
-            />
-            <TextField
-              fullWidth
-              margin="normal"
-              label="Contraseña"
-              name="password"
-              type="password"
-              value={formik.values.password}
-              onChange={formik.handleChange}
-              error={formik.touched.password && Boolean(formik.errors.password)}
-              helperText={formik.touched.password && formik.errors.password}
             />
             <TextField
               fullWidth
@@ -220,7 +204,7 @@ export const ProfileForm = () => {
           </form>
         </Box>
       </Modal>
-      <Modal open={confirmationOpenProfileForm} onClose={() => setConfirmationOpenProfileForm(false)}>
+      <Modal open={confirmationOpenProfileEditForm} onClose={() => setConfirmationOpenProfileEditForm(false)}>
         <Box
           sx={{
             position: 'absolute',
@@ -243,11 +227,11 @@ export const ProfileForm = () => {
           </Typography>
           <Typography>Trabajamos en encontrar coincidencias!!</Typography>
           <Typography>Configura tus notificaciones para estar al tanto del matching en networking.</Typography>
-          <Button onClick={() => setConfirmationOpenProfileForm(false)} variant="contained">
+          <Button onClick={() => setConfirmationOpenProfileEditForm(false)} variant="contained">
             Cerrar
           </Button>
         </Box>
       </Modal>
-    </>
+    </Box>
   )
 }

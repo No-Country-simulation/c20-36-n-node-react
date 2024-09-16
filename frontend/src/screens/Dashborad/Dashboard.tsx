@@ -3,10 +3,13 @@ import EditIcon from '@mui/icons-material/Edit'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
 import { Avatar, Box, Button, Card, IconButton, Typography, useTheme } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import { ProfileEditForm } from '../../forms/ProfileEditForm'
+import { useProfileEditForm } from '../../hooks/useProfileForm'
 
 export function Dashboard() {
   const theme = useTheme()
   const navigate = useNavigate()
+  const { openProfileEditForm, handleOpenProfileEditForm, handleCloseProfileEditForm } = useProfileEditForm()
 
   return (
     <Box
@@ -144,12 +147,13 @@ export function Dashboard() {
         <Card sx={{ p: 2, mt: 2, bgcolor: 'purple.4' }}>
           <Typography variant="h6">¿Quieres modificar tu perfil?</Typography>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mt: 1 }}>
-            <Button startIcon={<EditIcon />} onClick={() => navigate('/dashboard/settings')}>
+            <Button startIcon={<EditIcon />} onClick={handleOpenProfileEditForm}>
               Editar
             </Button>
             <Button startIcon={<DeleteIcon />} color="error" onClick={() => navigate('/dashboard/delete')}>
               Eliminar
             </Button>
+            <ProfileEditForm open={openProfileEditForm} close={handleCloseProfileEditForm} />
           </Box>
         </Card>
 

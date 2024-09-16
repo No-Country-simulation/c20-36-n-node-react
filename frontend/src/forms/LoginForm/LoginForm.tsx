@@ -1,6 +1,6 @@
 import { Box, Button, Link, TextField, ThemeProvider, Typography } from '@mui/material'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import Navbar from '../../components/organisms/Navbar/Navbar'
 import { getMainTheme } from '../../theme/getMainTheme'
 import ErrorMessageLogin from './ErrorMessageLogin/ErrorMessageLogin'
@@ -17,8 +17,12 @@ export default function LoginForm() {
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>()
+  const navigate = useNavigate()
 
-  const onSubmit: SubmitHandler<FormValues> = data => console.log(data)
+  const onSubmit: SubmitHandler<FormValues> = data => {
+    console.log(data)
+    navigate('/dashboard/profile')
+  }
 
   return (
     <ThemeProvider theme={getMainTheme()}>
