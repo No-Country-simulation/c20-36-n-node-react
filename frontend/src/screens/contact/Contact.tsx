@@ -1,10 +1,9 @@
-import React from 'react';
+import Contact1 from '../../assets/contact-img.png'
+import facebook from '../../assets/facebook.png'
+import instagram from '../../assets/instagram.png'
+import twitter from '../../assets/twitter.png'
+import youtube from '../../assets/youtube.png'
 import './Contact.css'
-import facebook from '../../src/assets/facebook.png'
-import instagram from '../../src/assets/instagram.png'
-import twitter from '../../src/assets/twitter.png'
-import youtube from '../../src/assets/youtube.png'
-import Contact1 from '../../src/assets/contact-img.png'
 
 export const Contact = () => {
   return (

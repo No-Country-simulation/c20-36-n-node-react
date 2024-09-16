@@ -75,17 +75,32 @@ export default function Navbar() {
           ))}
         </Menu>
 
-        <Button
-          variant="contained"
-          component={NavLink}
-          to={location.pathname === '/login' ? '/register' : '/login'}
-          color="inherit"
-          endIcon={<ArrowForwardIosIcon />}
-          sx={{ ml: 2, backgroundColor: 'mono.white', color: 'mono.black.2' }}
-          aria-label={location.pathname === '/login' ? 'Registrase' : 'Inicia Sesión'}
-        >
-          <Typography>{location.pathname === '/login' ? 'Registrase' : 'Inicia Sesión'}</Typography>
-        </Button>
+        {location.pathname !== '/dashboard/profile' && (
+          <Button
+            variant="contained"
+            component={NavLink}
+            to={location.pathname === '/login' ? '/register' : '/login'}
+            color="inherit"
+            endIcon={<ArrowForwardIosIcon />}
+            sx={{ ml: 2, backgroundColor: 'mono.white', color: 'mono.black.2' }}
+            aria-label={location.pathname === '/login' ? 'Registrase' : 'Inicia Sesión'}
+          >
+            <Typography>{location.pathname === '/login' ? 'Registrase' : 'Inicia Sesión'}</Typography>
+          </Button>
+        )}
+        {location.pathname === '/dashboard/profile' && (
+          <Button
+            variant="contained"
+            component={NavLink}
+            to={'/'}
+            color="inherit"
+            endIcon={<CloseIcon />}
+            sx={{ ml: 2, backgroundColor: 'mono.white', color: 'mono.black.2' }}
+            aria-label={'Cerrar Sesión'}
+          >
+            <Typography>{'Cerrar Sesión'}</Typography>
+          </Button>
+        )}
       </Toolbar>
     </AppBar>
   )

@@ -1,8 +1,8 @@
+import FaqsSection from '../../components/organisms/FaqsSection/FaqsSection'
 import { benefits } from '../../constants/index'
-import FaqSection from '../../src/components/FaqsSection/FaqsSection'
 import './about.css'
 
-const about = () => {
+const About = () => {
   return (
     <>
       <section className="about-container">
@@ -65,9 +65,9 @@ const about = () => {
         </div>
       </section>
       {/* FAQs section */}
-      <FaqSection />
+      <FaqsSection />
     </>
   )
 }
 
-export default about
+export default About
