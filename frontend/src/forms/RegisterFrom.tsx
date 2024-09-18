@@ -10,7 +10,8 @@ export const RegisterForm = () => {
 
   const formik = useFormik({
     initialValues: {
-      fullName: '',
+      name: '',
+      lastname: '',
       email: '',
       password: '',
       github: '',
@@ -48,12 +49,22 @@ export const RegisterForm = () => {
           <TextField
             fullWidth
             margin="normal"
-            label="Nombre y Apellido"
-            name="fullName"
-            value={formik.values.fullName}
+            label="Nombre"
+            name="name"
+            value={formik.values.name}
             onChange={formik.handleChange}
-            error={formik.touched.fullName && Boolean(formik.errors.fullName)}
-            helperText={formik.touched.fullName && formik.errors.fullName}
+            error={formik.touched.name && Boolean(formik.errors.name)}
+            helperText={formik.touched.name && formik.errors.name}
+          />
+          <TextField
+            fullWidth
+            margin="normal"
+            label="Apellido"
+            name="lastname"
+            value={formik.values.lastname}
+            onChange={formik.handleChange}
+            error={formik.touched.lastname && Boolean(formik.errors.lastname)}
+            helperText={formik.touched.lastname && formik.errors.lastname}
           />
           <TextField
             fullWidth

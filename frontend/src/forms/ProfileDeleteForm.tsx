@@ -13,12 +13,13 @@ import {
   Typography,
 } from '@mui/material'
 import { useFormik } from 'formik'
+import { useNavigate } from 'react-router-dom'
 import { COLLABORATOR_OPTIONS, LANGUAGES, PROYECT_TYPES, TOOLS } from '../constants/constants'
-import { useProfileEditForm } from '../hooks/useProfileEditForm'
+import { useProfileDeleteForm } from '../hooks/useProfileDeleteFrom'
 
-export const ProfileEditForm = ({ open = false, close = false }) => {
-  const { setOpenProfileEditForm, confirmationOpenProfileEditForm, setConfirmationOpenProfileEditForm, validationProfileSchema } =
-    useProfileEditForm()
+export const ProfileDeleteForm = ({ open = false, close = false }) => {
+  const navigate = useNavigate()
+  const { setOpenProfileDeleteForm, confirmationOpenProfileDeleteForm, setConfirmationOpenProfileDeleteForm } = useProfileDeleteForm()
 
   const formik = useFormik({
     initialValues: {
@@ -33,13 +34,17 @@ export const ProfileEditForm = ({ open = false, close = false }) => {
       projectType: 'Web app',
       collaborators: '1-3',
     },
-    validationSchema: validationProfileSchema,
     onSubmit: values => {
-      console.log('Form Values:', values)
-      setConfirmationOpenProfileEditForm(true)
-      setOpenProfileEditForm(false)
+      console.log('Form Delete Values:', values)
+      setConfirmationOpenProfileDeleteForm(true)
+      setOpenProfileDeleteForm(false)
     },
   })
+
+  const handleConfirmationProfileDeleteForm = () => {
+    setConfirmationOpenProfileDeleteForm(false)
+    navigate('/')
+  }
 
   return (
     <Box>
@@ -61,7 +66,7 @@ export const ProfileEditForm = ({ open = false, close = false }) => {
           }}
         >
           <Typography variant="h6" component="h2">
-            Editando Perfil
+            Perfil
           </Typography>
           <form onSubmit={formik.handleSubmit}>
             <TextField
@@ -70,9 +75,9 @@ export const ProfileEditForm = ({ open = false, close = false }) => {
               label="Nombre"
               name="name"
               value={formik.values.name}
-              onChange={formik.handleChange}
-              error={formik.touched.name && Boolean(formik.errors.name)}
-              helperText={formik.touched.name && formik.errors.name}
+              //onChange={formik.handleChange}
+              //error={formik.touched.fullName && Boolean(formik.errors.fullName)}
+              // helperText={formik.touched.fullName && formik.errors.fullName}
             />
             <TextField
               fullWidth
@@ -80,9 +85,9 @@ export const ProfileEditForm = ({ open = false, close = false }) => {
               label="Apellido"
               name="lastname"
               value={formik.values.lastname}
-              onChange={formik.handleChange}
-              error={formik.touched.lastname && Boolean(formik.errors.lastname)}
-              helperText={formik.touched.lastname && formik.errors.lastname}
+              //onChange={formik.handleChange}
+              //error={formik.touched.fullName && Boolean(formik.errors.fullName)}
+              //helperText={formik.touched.fullName && formik.errors.fullName}
             />
             <TextField
               fullWidth
@@ -203,12 +208,12 @@ export const ProfileEditForm = ({ open = false, close = false }) => {
               ))}
             </TextField>
             <Button type="submit" variant="contained" fullWidth sx={{ mt: 2 }}>
-              Enviar
+              Borrar Cuenta
             </Button>
           </form>
         </Box>
       </Modal>
-      <Modal open={confirmationOpenProfileEditForm} onClose={() => setConfirmationOpenProfileEditForm(false)}>
+      <Modal open={confirmationOpenProfileDeleteForm} onClose={() => setConfirmationOpenProfileDeleteForm(false)}>
         <Box
           sx={{
             position: 'absolute',
@@ -227,11 +232,11 @@ export const ProfileEditForm = ({ open = false, close = false }) => {
           }}
         >
           <Typography variant="h6" component="h2">
-            Perfil Actualizado !!!
+            Perfil Eliminado !!!
           </Typography>
-          <Typography>Recuerda estar atento a los match.</Typography>
-          <Typography>Configura tus notificaciones para estar al tanto del matching en networking.</Typography>
-          <Button onClick={() => setConfirmationOpenProfileEditForm(false)} variant="contained">
+          <Typography>Gracias por apoyarnos en este camino!!</Typography>
+          <Typography>Te esperamos nuevamente para otras oportunidades de matchmaking.</Typography>
+          <Button onClick={handleConfirmationProfileDeleteForm} variant="contained">
             Cerrar
           </Button>
         </Box>
