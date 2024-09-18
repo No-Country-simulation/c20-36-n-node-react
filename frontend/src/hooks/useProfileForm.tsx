@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import * as Yup from 'yup'
 
-export const useProfileForm = () => {
-  const [openProfileForm, setOpenProfileForm] = useState(false)
-  const [confirmationOpenProfileForm, setConfirmationOpenProfileForm] = useState(false)
+export const useProfileEditForm = () => {
+  const [openProfileEditForm, setOpenProfileEditForm] = useState(false)
+  const [confirmationOpenProfileEditForm, setConfirmationOpenProfileEditForm] = useState(false)
 
-  const handleOpenProfileForm = () => setOpenProfileForm(true)
-  const handleCloseProfileForm = () => setOpenProfileForm(false)
+  const handleOpenProfileEditForm = () => {
+    setOpenProfileEditForm(true)
+  }
+  const handleCloseProfileEditForm = () => setOpenProfileEditForm(false)
 
   const validationProfileSchema = Yup.object({
     fullName: Yup.string().required('Nombre y apellido es requerido'),
@@ -25,12 +27,12 @@ export const useProfileForm = () => {
   })
 
   return {
-    openProfileForm,
-    setOpenProfileForm,
-    confirmationOpenProfileForm,
-    setConfirmationOpenProfileForm,
-    handleOpenProfileForm,
-    handleCloseProfileForm,
+    openProfileEditForm,
+    setOpenProfileEditForm,
+    confirmationOpenProfileEditForm,
+    setConfirmationOpenProfileEditForm,
+    handleOpenProfileEditForm,
+    handleCloseProfileEditForm,
     validationProfileSchema,
   }
 }

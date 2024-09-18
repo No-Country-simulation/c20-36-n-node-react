@@ -57,15 +57,15 @@ export function Footer() {
             <Typography variant="h6" sx={{ color: 'purple.1', fontWeight: 'bold' }}>
               Empresa
             </Typography>
-            <Link href="#" underline="none" sx={{ color: 'inherit' }}>
+            <Link href="/" underline="none" sx={{ color: 'inherit' }}>
               Inicio
             </Link>
             <br />
-            <Link href="#" underline="none" sx={{ color: 'inherit' }}>
+            <Link href="/contact" underline="none" sx={{ color: 'inherit' }}>
               Contacto
             </Link>
             <br />
-            <Link href="#" underline="none" sx={{ color: 'inherit' }}>
+            <Link href="/about" underline="none" sx={{ color: 'inherit' }}>
               Nosotros
             </Link>
           </Box>
@@ -91,15 +91,15 @@ export function Footer() {
             <Typography variant="h6" sx={{ color: 'purple.1', fontWeight: 'bold' }}>
               Social
             </Typography>
-            <Link href="#" underline="none" sx={{ color: 'inherit' }} target="_blank">
+            <Link href="https://www.facebook.com/" underline="none" sx={{ color: 'inherit' }} target="_blank">
               Facebook
             </Link>
             <br />
-            <Link href="#" underline="none" sx={{ color: 'inherit' }} target="_blank">
+            <Link href="https://www.instagram.com/" underline="none" sx={{ color: 'inherit' }} target="_blank">
               Instagram
             </Link>
             <br />
-            <Link href="#" underline="none" sx={{ color: 'inherit' }} target="_blank">
+            <Link href="https://www.youtube.com/" underline="none" sx={{ color: 'inherit' }} target="_blank">
               YouTube
             </Link>
           </Box>
