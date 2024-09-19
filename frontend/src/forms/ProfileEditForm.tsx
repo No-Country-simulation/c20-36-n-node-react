@@ -1,4 +1,3 @@
-// src/components/organisms/ProfileEditForm.tsx
 import {
   Box,
   Button,
@@ -14,38 +13,56 @@ import {
   Typography,
 } from '@mui/material'
 import { useFormik } from 'formik'
+import { useEffect } from 'react'
 import { COLLABORATOR_OPTIONS, LANGUAGES, PROYECT_TYPES, TOOLS } from '../constants/constants'
-import { useProfileEditForm } from '../hooks/useProfileForm'
+import { useMockData } from '../hooks/useMockData'
+import { useProfileEditForm } from '../hooks/useProfileEditForm'
 
 export const ProfileEditForm = ({ open = false, close = false }) => {
-  const {
-    openProfileEditForm,
-    setOpenProfileEditForm,
-    confirmationOpenProfileEditForm,
-    setConfirmationOpenProfileEditForm,
-    validationProfileSchema,
-  } = useProfileEditForm()
-  console.log('value open in form', openProfileEditForm)
+  const { setOpenProfileEditForm, confirmationOpenProfileEditForm, setConfirmationOpenProfileEditForm, validationProfileSchema } =
+    useProfileEditForm()
+  const { updateUser } = useMockData()
+  const { currentUser } = useMockData()
+  console.log('currentUser??', currentUser)
 
   const formik = useFormik({
     initialValues: {
-      fullName: '',
+      userID: '',
+      name: '',
+      lastName: '',
       email: '',
-      github: '',
+      urlGitHub: '',
       linkedIn: '',
-      otherSocial: '',
-      languages: [],
-      tools: [],
+      languages: [''],
+      tools: [''],
       projectType: '',
       collaborators: '',
     },
     validationSchema: validationProfileSchema,
     onSubmit: values => {
-      console.log('Form Values:', values)
+      updateUser(values)
+      console.log('Form Values Edit:', values)
       setConfirmationOpenProfileEditForm(true)
       setOpenProfileEditForm(false)
     },
   })
+
+  useEffect(() => {
+    if (currentUser) {
+      formik.setValues({
+        userID: currentUser.userID,
+        name: currentUser.name || '',
+        lastName: currentUser.lastName || '',
+        email: currentUser.email || '',
+        urlGitHub: currentUser.urlGitHub || '',
+        linkedIn: currentUser.linkedIn || '',
+        languages: currentUser.languages || [],
+        tools: currentUser.tools || [],
+        projectType: currentUser.projectType || '',
+        collaborators: currentUser.collaborators || '',
+      })
+    }
+  }, [currentUser])
 
   return (
     <Box>
@@ -67,18 +84,28 @@ export const ProfileEditForm = ({ open = false, close = false }) => {
           }}
         >
           <Typography variant="h6" component="h2">
-            Perfil
+            Editando Perfil
           </Typography>
           <form onSubmit={formik.handleSubmit}>
             <TextField
               fullWidth
               margin="normal"
-              label="Nombre y Apellido"
-              name="fullName"
-              value={formik.values.fullName}
+              label="Nombre"
+              name="name"
+              value={formik.values.name}
               onChange={formik.handleChange}
-              error={formik.touched.fullName && Boolean(formik.errors.fullName)}
-              helperText={formik.touched.fullName && formik.errors.fullName}
+              error={formik.touched.name && Boolean(formik.errors.name)}
+              helperText={formik.touched.name && formik.errors.name}
+            />
+            <TextField
+              fullWidth
+              margin="normal"
+              label="Apellido"
+              name="lastName"
+              value={formik.values.lastName}
+              onChange={formik.handleChange}
+              error={formik.touched.lastName && Boolean(formik.errors.lastName)}
+              helperText={formik.touched.lastName && formik.errors.lastName}
             />
             <TextField
               fullWidth
@@ -94,11 +121,11 @@ export const ProfileEditForm = ({ open = false, close = false }) => {
               fullWidth
               margin="normal"
               label="Cuenta de GitHub"
-              name="github"
-              value={formik.values.github}
+              name="urlGitHub"
+              value={formik.values.urlGitHub}
               onChange={formik.handleChange}
-              error={formik.touched.github && Boolean(formik.errors.github)}
-              helperText={formik.touched.github && formik.errors.github}
+              error={formik.touched.urlGitHub && Boolean(formik.errors.urlGitHub)}
+              helperText={formik.touched.urlGitHub && formik.errors.urlGitHub}
             />
             <TextField
               fullWidth
@@ -109,16 +136,6 @@ export const ProfileEditForm = ({ open = false, close = false }) => {
               onChange={formik.handleChange}
               error={formik.touched.linkedIn && Boolean(formik.errors.linkedIn)}
               helperText={formik.touched.linkedIn && formik.errors.linkedIn}
-            />
-            <TextField
-              fullWidth
-              margin="normal"
-              label="Otra Red Social"
-              name="otherSocial"
-              value={formik.values.otherSocial}
-              onChange={formik.handleChange}
-              error={formik.touched.otherSocial && Boolean(formik.errors.otherSocial)}
-              helperText={formik.touched.otherSocial && formik.errors.otherSocial}
             />
             <FormControl fullWidth margin="normal">
               <InputLabel id="languages-label">Lenguajes</InputLabel>
@@ -225,7 +242,7 @@ export const ProfileEditForm = ({ open = false, close = false }) => {
           <Typography variant="h6" component="h2">
             Perfil Actualizado !!!
           </Typography>
-          <Typography>Trabajamos en encontrar coincidencias!!</Typography>
+          <Typography>Recuerda estar atento a los match.</Typography>
           <Typography>Configura tus notificaciones para estar al tanto del matching en networking.</Typography>
           <Button onClick={() => setConfirmationOpenProfileEditForm(false)} variant="contained">
             Cerrar

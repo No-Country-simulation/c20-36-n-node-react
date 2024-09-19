@@ -1,0 +1,15 @@
+[
+  {
+    "userID": "5384fa4c-21cf-4b2a-b081-e51159427ef5",
+    "name": "Milan",
+    "lastName": "Alvarez",
+    "email": "milan@gmail.com",
+    "urlGitHub": "https://github.io/hackanonimous/.com",
+    "urlLinkedIn": null,
+    "biography": null,
+    "photo": "https://png.pngtree.com/png-clipart/20210311/original/pngtree-customer-login-avatar-png-image_6015290.jpg",
+    "address": null,
+    "birth": null,
+    "isAdmin": false
+  }
+]
