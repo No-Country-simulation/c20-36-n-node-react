@@ -7,6 +7,7 @@ import LoginScreen from '../screens/LoginScreen/LoginScreen'
 import RegisterScreen from '../screens/RegisterScreen/RegisterScreen'
 import About from '../screens/about/about'
 import { Contact } from '../screens/contact/Contact'
+import { MatchPage } from '../screens/MatchPage/MatchPage'
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
       { path: '/contact', element: <Contact /> },
       { path: '/about', element: <About /> },
       { path: '/dashboard/profile', element: <ProfileEditForm /> },
+      { path: '/dashboard/match', element: <MatchPage /> },
     ],
   },
 ])

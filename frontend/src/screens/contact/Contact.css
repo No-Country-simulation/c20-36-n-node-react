@@ -11,6 +11,7 @@ body {
 
 .contact {
   width: 100%;
+  background-color: #0b0205;
 }
 
 .contact-top {
@@ -25,7 +26,7 @@ body {
 
 .contact-img {
   width: 75%;
-  height: 130vh;
+  height: 120vh;
   display: block;
   mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 70%);
   background-color: black;
@@ -41,6 +42,7 @@ body {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.898);
     text-align: center;
     font-size: 4rem;
+    font-family: "Karla", sans-serif;
   }
   
   .contact-container-text {
@@ -53,6 +55,7 @@ body {
     text-align: center;
     font-size: 2.5rem;
     max-width: 100%;
+    font-family: "Karla", sans-serif;
   }
 
 .contact-content {
@@ -99,6 +102,7 @@ body {
 .contact-container-desc {
   color: whitesmoke;
   font-weight: 700;
+  font-family: "Karla", sans-serif;
 }
 
 .contact-information-box {
@@ -127,12 +131,15 @@ body {
   color: whitesmoke;
   font-weight: 700;
   font-size: 2rem;
+  font-family: "Karla", sans-serif;
 }
 
 .contact-info-container-desc{
-  color: whitesmoke;
+  color: rgba(245, 245, 245, 0.628);
   font-weight: 600;
   font-size: 1.5rem;
+  font-family: "Karla", sans-serif;
+  margin-left: 2rem;
 }
 
 
