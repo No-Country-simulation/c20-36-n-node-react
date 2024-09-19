@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from 'react'
-import mockData from '../mocks/mockData.json'
 
 export interface User {
   userID: string
@@ -7,42 +6,90 @@ export interface User {
   lastName: string
   email: string
   urlGitHub: string
-  urlLinkedIn: string | null
-  biography: string | null
-  photo: string
-  address: string | null
-  birth: string | null
-  isAdmin: boolean
+  linkedIn: string
+  languages: string[]
+  tools: string[]
+  projectType: string
+  collaborators: string
+}
+
+// Recupera la lista de usuarios desde `localStorage`
+const getUsersFromLocalStorage = (): User[] => {
+  const users = localStorage.getItem('users')
+  return users ? JSON.parse(users) : []
+}
+
+// Guarda la lista de usuarios en `localStorage`
+const saveUsersToLocalStorage = (users: User[]) => {
+  localStorage.setItem('users', JSON.stringify(users))
+}
+
+// Guarda el usuario actual en `localStorage`
+const saveCurrentUserToLocalStorage = (user: User) => {
+  localStorage.setItem('currentUser', JSON.stringify(user))
+}
+
+// Recupera el usuario actual desde `localStorage`
+const getCurrentUserFromLocalStorage = (): User | null => {
+  const user = localStorage.getItem('currentUser')
+  return user ? JSON.parse(user) : null
 }
 
 export const useMockData = () => {
-  // Cargar datos de localStorage o usar datos mock
-  const [users, setUsers] = useState<User[]>(() => {
-    const storedUsers = localStorage.getItem('users')
-    return storedUsers ? JSON.parse(storedUsers) : (mockData as User[])
-  })
+  const [users, setUsers] = useState<User[]>([])
+  const [currentUser, setCurrentUser] = useState<User | null>(null)
 
-  // Guardar datos en localStorage cuando cambian
   useEffect(() => {
-    localStorage.setItem('users', JSON.stringify(users))
-  }, [users])
+    // Inicializa los usuarios desde `localStorage`
+    setUsers(getUsersFromLocalStorage())
+    // Inicializa el usuario actual desde `localStorage`
+    setCurrentUser(getCurrentUserFromLocalStorage())
+  }, [])
 
   const createUser = useCallback((newUser: User) => {
-    setUsers(prevUsers => [...prevUsers, newUser])
+    saveCurrentUserToLocalStorage(newUser)
+    setCurrentUser(newUser)
+    setUsers(prevUsers => {
+      const updatedUsers = [...prevUsers, newUser]
+      saveUsersToLocalStorage(updatedUsers)
+      return updatedUsers
+    })
   }, [])
 
   const updateUser = useCallback((updatedUser: User) => {
-    setUsers(prevUsers => prevUsers.map(user => (user.userID === updatedUser.userID ? updatedUser : user)))
+    console.log('values edit?', updatedUser)
+    setUsers(prevUsers => {
+      const updatedUsers = prevUsers.map(user => (user.userID === updatedUser.userID ? updatedUser : user))
+      saveUsersToLocalStorage(updatedUsers)
+      return updatedUsers
+    })
   }, [])
 
   const deleteUser = useCallback((userID: string) => {
-    setUsers(prevUsers => prevUsers.filter(user => user.userID !== userID))
+    setUsers(prevUsers => {
+      const updatedUsers = prevUsers.filter(user => user.userID !== userID)
+      saveUsersToLocalStorage(updatedUsers)
+      return updatedUsers
+    })
+  }, [])
+
+  const loginUser = useCallback((user: User) => {
+    setCurrentUser(user)
+    saveCurrentUserToLocalStorage(user)
+  }, [])
+
+  const logoutUser = useCallback(() => {
+    setCurrentUser(null)
+    localStorage.removeItem('currentUser')
   }, [])
 
   return {
     users,
+    currentUser,
     createUser,
     updateUser,
     deleteUser,
+    loginUser,
+    logoutUser,
   }
 }

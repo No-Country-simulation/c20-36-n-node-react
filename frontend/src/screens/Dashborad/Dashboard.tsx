@@ -5,6 +5,7 @@ import { Avatar, Box, Button, Card, IconButton, Typography, useTheme } from '@mu
 import { useNavigate } from 'react-router-dom'
 import { ProfileDeleteForm } from '../../forms/ProfileDeleteForm'
 import { ProfileEditForm } from '../../forms/ProfileEditForm'
+import { useMockData } from '../../hooks/useMockData'
 import { useProfileDeleteForm } from '../../hooks/useProfileDeleteFrom'
 import { useProfileEditForm } from '../../hooks/useProfileEditForm'
 
@@ -13,6 +14,8 @@ export function Dashboard() {
   const navigate = useNavigate()
   const { openProfileEditForm, handleOpenProfileEditForm, handleCloseProfileEditForm } = useProfileEditForm()
   const { openProfileDeleteForm, handleOpenProfileDeleteForm, handleCloseProfileDeleteForm } = useProfileDeleteForm()
+
+  const { currentUser } = useMockData()
 
   return (
     <Box
@@ -82,18 +85,20 @@ export function Dashboard() {
 
             {/* Profile Info */}
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-              <Typography sx={{ color: 'mono.white' }}>Juan Torres</Typography>
-              <Typography sx={{ color: 'mono.white' }}>Full Stack</Typography>
-              <Typography sx={{ color: 'mono.white' }}>Juani89</Typography>
-              <Typography sx={{ color: 'mono.white' }}>Colaborativo</Typography>
+              <Typography sx={{ color: 'mono.white' }}>
+                {currentUser?.name || currentUser?.lastName ? `${currentUser?.name} ${currentUser?.lastName}` : ''}
+              </Typography>
+              <Typography sx={{ color: 'mono.white' }}>{currentUser?.urlGitHub}</Typography>
+              <Typography sx={{ color: 'mono.white' }}>{currentUser?.languages}</Typography>
+              <Typography sx={{ color: 'mono.white' }}>{currentUser?.tools}</Typography>
             </Box>
 
             {/* Profile Contact Info */}
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-              <Typography sx={{ color: 'mono.white' }}>juantorres@gmail.com</Typography>
-              <Typography sx={{ color: 'mono.white' }}>Python, Angular</Typography>
-              <Typography sx={{ color: 'mono.white' }}>Juan Torres</Typography>
-              <Typography sx={{ color: 'mono.white' }}>Colaboraciones: 4</Typography>
+              <Typography sx={{ color: 'mono.white' }}>{currentUser?.email}</Typography>
+              <Typography sx={{ color: 'mono.white' }}>{currentUser?.languages}</Typography>
+              <Typography sx={{ color: 'mono.white' }}>{currentUser?.projectType}</Typography>
+              <Typography sx={{ color: 'mono.white' }}>{currentUser?.collaborators}</Typography>
             </Box>
           </Box>
 
@@ -139,7 +144,7 @@ export function Dashboard() {
         {/* Profile Description Card */}
         <Card sx={{ p: 2, bgcolor: 'purpleAlpha.5' }}>
           <Typography variant="h6" sx={{ color: 'mono.white' }}>
-            Juan Torres dice:
+            {`${currentUser?.name} ${currentUser?.lastName} dice:`}
           </Typography>
           <Typography sx={{ color: 'mono.white' }}>
             Soy un apasionado Full Stack Dev y busco amigos nuevos para hacer proyectos divertidos juntos. ¡Conectemos!

@@ -1,23 +1,27 @@
-// src/components/organisms/RegisterForm.tsx
 import { Box, Button, Modal, TextField, Typography } from '@mui/material'
 import { useFormik } from 'formik'
 import { useNavigate } from 'react-router-dom'
+import { useMockData } from '../hooks/useMockData'
 import { useRegisterForm } from '../hooks/useRegisterForm'
+import { generateRandomString } from '../utils/generateRandomString'
 
 export const RegisterForm = () => {
   const navigate = useNavigate()
   const { setOpenRegisterForm, confirmationOpenRegisterForm, setConfirmationOpenRegisterForm, validationRegisterSchema } = useRegisterForm()
+  const { createUser } = useMockData()
 
   const formik = useFormik({
     initialValues: {
+      userID: generateRandomString(),
       name: '',
-      lastname: '',
+      lastName: '',
       email: '',
       password: '',
-      github: '',
+      urlGitHub: '',
     },
     validationSchema: validationRegisterSchema,
     onSubmit: values => {
+      createUser(values)
       console.log('Form Values:', values)
       setConfirmationOpenRegisterForm(true)
       setOpenRegisterForm(false)
@@ -60,11 +64,11 @@ export const RegisterForm = () => {
             fullWidth
             margin="normal"
             label="Apellido"
-            name="lastname"
-            value={formik.values.lastname}
+            name="lastName"
+            value={formik.values.lastName}
             onChange={formik.handleChange}
-            error={formik.touched.lastname && Boolean(formik.errors.lastname)}
-            helperText={formik.touched.lastname && formik.errors.lastname}
+            error={formik.touched.lastName && Boolean(formik.errors.lastName)}
+            helperText={formik.touched.lastName && formik.errors.lastName}
           />
           <TextField
             fullWidth
@@ -91,11 +95,11 @@ export const RegisterForm = () => {
             fullWidth
             margin="normal"
             label="Cuenta de GitHub"
-            name="github"
-            value={formik.values.github}
+            name="urlGitHub"
+            value={formik.values.urlGitHub}
             onChange={formik.handleChange}
-            error={formik.touched.github && Boolean(formik.errors.github)}
-            helperText={formik.touched.github && formik.errors.github}
+            error={formik.touched.urlGitHub && Boolean(formik.errors.urlGitHub)}
+            helperText={formik.touched.urlGitHub && formik.errors.urlGitHub}
           />
           <Button type="submit" variant="contained" fullWidth sx={{ mt: 2 }}>
             Enviar
