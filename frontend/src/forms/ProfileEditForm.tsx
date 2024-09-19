@@ -13,6 +13,7 @@ import {
   Typography,
 } from '@mui/material'
 import { useFormik } from 'formik'
+import { dataApiRequest } from '../api/dataApiRequest'
 import { COLLABORATOR_OPTIONS, LANGUAGES, PROYECT_TYPES, TOOLS } from '../constants/constants'
 import { useProfileEditForm } from '../hooks/useProfileEditForm'
 
@@ -21,9 +22,9 @@ export const ProfileEditForm = ({ open = false, close = false }) => {
     useProfileEditForm()
 
   const formik = useFormik({
-    initialValues: {
-      name: 'Normand',
-      lastname: 'Persico',
+    initialValues: await dataApiRequest('/user/me', 'GET', {
+      name: values.name,
+      lastName: values.lastName,
       email: 'persico@gmail.com',
       github: 'https://github.com/persico',
       linkedIn: '',
@@ -32,7 +33,7 @@ export const ProfileEditForm = ({ open = false, close = false }) => {
       tools: ['NodeJs', 'MUI', 'AWS'],
       projectType: 'Web app',
       collaborators: '1-3',
-    },
+    }),
     validationSchema: validationProfileSchema,
     onSubmit: values => {
       console.log('Form Values:', values)
