@@ -23,6 +23,7 @@ export function Footer() {
         }}
       >
         <Box sx={{ maxWidth: 250, mb: { mobile: 4, tablet: 0 } }}>
+          
           <Typography
             variant="h6"
             sx={{

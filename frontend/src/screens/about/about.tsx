@@ -1,18 +1,22 @@
 import FaqsSection from '../../components/organisms/FaqsSection/FaqsSection'
 import { benefits } from '../../constants/index'
 import './about.css'
+import AboutImg from '../../assets/about-img.png'
 
 const About = () => {
   return (
     <>
       <section className="about-container">
         <div className="about-image-wrapper">
-          <img src="../../src/assets/Designer.jpeg" alt="about img" className="about-image" data-aos="fade-left" data-aos-delay="300" />
+          <img src={AboutImg} alt="about img" className="about-image" data-aos="fade-left" data-aos-delay="300" />
         </div>
         <div className="about-content">
           <div className="about-intro">
             <p className="about-welcome">Bienvenidos al Mundo de</p>
-            <h1 className="about-title">DEVCONNECT</h1>
+            <div className='about-title-content'>
+              <h2 className="about-title">DEV</h2>
+              <h2 className="about-title-second">CONNECT</h2>
+            </div>
             <p className="about-description">
               DevConnect te permite construir una red sólida y global, facilitando encuentros con personas apasionadas por las mismas herramientas y
               lenguajes de programación que tú. Ya sea que estés buscando colaborar en un proyecto emocionante, encontrar mentores que te guíen en tu
