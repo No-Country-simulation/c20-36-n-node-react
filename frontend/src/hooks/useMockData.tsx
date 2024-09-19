@@ -58,6 +58,7 @@ export const useMockData = () => {
 
   const updateUser = useCallback((updatedUser: User) => {
     console.log('values edit?', updatedUser)
+
     setUsers(prevUsers => {
       const updatedUsers = prevUsers.map(user => (user.userID === updatedUser.userID ? updatedUser : user))
       saveUsersToLocalStorage(updatedUsers)
