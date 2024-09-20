@@ -19,9 +19,8 @@ import { useMockData } from '../hooks/useMockData'
 import { useProfileEditForm } from '../hooks/useProfileEditForm'
 
 export const ProfileEditForm = ({ open = false, close = false }) => {
-  const { setOpenProfileEditForm, confirmationOpenProfileEditForm, setConfirmationOpenProfileEditForm, validationProfileSchema } =
-    useProfileEditForm()
-  const { updateUser } = useMockData()
+  const { setOpenProfileEditForm, confirmationOpenProfileEditForm, setConfirmationOpenProfileEditForm } = useProfileEditForm()
+  const { saveCurrentUserToLocalStorage } = useMockData()
   const { currentUser } = useMockData()
   console.log('currentUser??', currentUser)
 
@@ -38,12 +37,10 @@ export const ProfileEditForm = ({ open = false, close = false }) => {
       projectType: '',
       collaborators: '',
     },
-    validationSchema: validationProfileSchema,
     onSubmit: values => {
-      updateUser(values)
-      console.log('Form Values Edit:', values)
-      setConfirmationOpenProfileEditForm(true)
+      saveCurrentUserToLocalStorage(values)
       setOpenProfileEditForm(false)
+      setConfirmationOpenProfileEditForm(true)
     },
   })
 
@@ -63,7 +60,10 @@ export const ProfileEditForm = ({ open = false, close = false }) => {
       })
     }
   }, [currentUser])
-
+  const handleCloseConfirmProfileEditForm = () => {
+    setOpenProfileEditForm(false)
+    setConfirmationOpenProfileEditForm(false)
+  }
   return (
     <Box>
       <Modal open={open} onClose={close}>
@@ -244,7 +244,7 @@ export const ProfileEditForm = ({ open = false, close = false }) => {
           </Typography>
           <Typography>Recuerda estar atento a los match.</Typography>
           <Typography>Configura tus notificaciones para estar al tanto del matching en networking.</Typography>
-          <Button onClick={() => setConfirmationOpenProfileEditForm(false)} variant="contained">
+          <Button onClick={handleCloseConfirmProfileEditForm} variant="contained">
             Cerrar
           </Button>
         </Box>
