@@ -8,7 +8,7 @@ import { RouterProvider } from 'react-router-dom'
 import './index.css'
 import { router } from './router/RouterProvider.tsx'
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,

@@ -32,9 +32,11 @@ En el mundo del desarrollo, muchos programadores junior enfrentan dificultades p
 
 *Frontend:* React
 
+
 *Backend:* Node.js
 
 *Diseño UX/UI:* Nuestro diseño en modo oscuro con colores neón hace referencia a la cultura de los programadores, proporcionando una experiencia visualmente atractiva y moderna.
+
 
 **Competencia**
 
@@ -63,6 +65,7 @@ Este proyecto no tiene una licencia específica.
 Contacto
 
 Para preguntas o soporte, puedes contactarnos a devconnect@gmail.com.
+
 
 ## ¡Hay equipo!
 
