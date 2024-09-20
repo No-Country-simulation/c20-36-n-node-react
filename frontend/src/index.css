@@ -1,7 +1,10 @@
 :root {
-  --dark-bg: #080808;
+  --dark-purple: #0b0205;
+  --image-base: 'url(../src/assets/Designer.jpeg)';
 }
 
 body {
-  background-color: var(--dark-bg);
+  background-color: var(--dark-purple);
+  margin: 0;
+  padding: 0;
 }

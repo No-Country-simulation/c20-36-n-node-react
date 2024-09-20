@@ -1,0 +1,195 @@
+/* About Section */
+.about-container {
+    max-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    background-color: #0b0205;
+  }
+  
+  @media (min-width: 768px) {
+    .about-container {
+      flex-direction: row;
+    }
+  }
+  
+  .about-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: calc(300px + 20vw);
+  }
+  
+  @media (min-width: 768px) {
+    .about-image-wrapper {
+      width: 50%;
+      height: 600px;
+    }
+  }
+  
+  .about-image {
+    object-fit: cover;
+    height: 600px;
+    mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 70%);
+  }
+  
+  .about-content {
+    width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .about-content {
+      width: 50%;
+    }
+  }
+  
+  .about-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    .about-intro {
+      text-align: left;
+    }
+  }
+  
+  .about-welcome {
+    padding: 4px 8px;
+    color: rgba(245, 245, 245, 0.6);
+    border-radius: 5px;
+    margin: auto;
+    font-family: "Karla", sans-serif;
+  }
+  
+  .about-title-content{
+    display: flex;
+  }
+
+  .about-title {
+    color: white;
+    font-family: "Karla", sans-serif;
+    font-size: 5rem;
+  }
+
+  .about-title-second{
+    color: #DCCAE9;
+    font-family: "Karla", sans-serif;
+    font-size: 5rem;
+  }
+  
+  .about-description {
+    color: whitesmoke;
+    font-family: "Karla", sans-serif;
+    font-size: 1.1rem;
+  }
+  
+  /* Stats Section */
+  .about-stats {
+    border-top: 2px solid #9356A0;
+    border-bottom: 2px solid #9356A0;
+    padding: 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .about-stats {
+      flex-direction: row;
+      background-color: transparent;
+      margin-top: 60px;
+      padding: 40px 0;
+    }
+  }
+  
+  .stat-item {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  
+  .stat-number {
+    color: whitesmoke;
+    margin-bottom: 0;
+  }
+  
+  .stat-plus {
+    color: #9356A0;
+  }
+  
+  .stat-text  {
+    color: whitesmoke;
+    margin-top: 0;
+  }
+  
+  
+  /* Benefits Section */
+.benefits {
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background-color: #0b0205;
+}
+
+.benefits-grid {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.first-row {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.second-row {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 768px) {
+  .benefits-grid {
+    gap: 1.5rem;
+  }
+
+  .first-row {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.benefit-box {
+  background-color: #282828;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  border: solid 2px #9356A0;
+  color: whitesmoke;
+  box-shadow: -2px -2px 94px -18px #37225a;
+  -webkit-box-shadow: -2px -2px 94px -18px #37225a;
+  -moz-box-shadow: -2px -2px 94px -18px #37225a;
+  transition: transform 0.3s ease, flex-grow 0.3s ease;
+  flex-grow: 1;
+}
+
+.benefit-box:hover {
+  transform: scale(1.02);
+  flex-grow: 1.1;
+}
+
+.benefits-grid .benefit-box:not(:hover) {
+  transform: scale(0.8);
+  flex-grow: 0.5;
+}
+
+.benefit-title {
+  color: var(--grey-700);
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-family: "Karla", sans-serif;
+}
+
+.benefit-description {
+  color: whitesmoke;
+  font-size: 1rem;
+  font-family: "Karla", sans-serif;
+}

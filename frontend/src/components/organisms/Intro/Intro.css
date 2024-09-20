@@ -1,0 +1,75 @@
+.intro-container {
+    max-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    background-color: #0b0205;
+  }
+  
+  .intro-content {
+    width: 50%;
+  }
+  
+  .intro-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .intro-title {
+    color: white;
+    font-size: 4rem;
+    font-family: "Karla", sans-serif;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.898);
+  }
+  
+  .intro-description {
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-family: "Karla", sans-serif;
+  }
+  
+  .intro-stats {
+    background-color: #282828;
+    border: solid 1px #9356A0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: -2px -2px 94px -18px #37225a;
+    -webkit-box-shadow: -2px -2px 94px -18px #37225a;
+    -moz-box-shadow: -2px -2px 94px -18px #37225a;
+  }
+  
+  .intro-stat {
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .stat-number {
+    color: whitesmoke;
+    margin-bottom: 0;
+    font-size: 2.5rem;
+    font-family: "Karla", sans-serif;
+  }
+  
+  .stat-plus {
+    color: #9356A0;
+    font-size: 2.5rem;
+  }
+  
+  .stat-label {
+    color: whitesmoke;
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+  

@@ -1,4 +1,4 @@
-import { createTheme, responsiveFontSizes } from '@mui/material'
+import { alpha, createTheme, responsiveFontSizes } from '@mui/material'
 
 const palette = {
   type: 'light',
@@ -10,11 +10,15 @@ const palette = {
     4: '#DCCAE9',
     5: '#9356A0',
   },
+  purpleAlpha: {
+    1: alpha('#2C1B47', 0.7),
+    2: alpha('#724C9D', 0.7),
+    3: alpha('#320064', 0.7),
+    4: alpha('#DCCAE9', 0.7),
+    5: alpha('#9356A0', 0.7),
+  },
   green: {
     1: 'green',
-  },
-  gray: {
-    1: 'gray',
   },
   yellow: {
     1: '#FAED00',
@@ -29,9 +33,6 @@ const palette = {
       2: '#141414',
       3: '#282828',
     },
-  },
-  grey: {
-    1: 'grey',
   },
   text: {
     primary: '#1F242D',
@@ -75,6 +76,21 @@ export const getMainTheme = () =>
         },
       },
       palette,
+      customStyles: {
+        backgroundLayout: {
+          position: 'relative',
+          color: 'white',
+          textAlign: 'center',
+          heigth: '100%',
+          maxWidth: '100%',
+          padding: 0,
+          margin: 0,
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          backgroundAttachment: 'fixed',
+        },
+      },
       layout: {
         contentWidth: 1236,
       },
@@ -115,10 +131,6 @@ export const getMainTheme = () =>
           fontFamily: 'Helvetica, Arial, sans-serif',
           fontWeight: 400,
         },
-      },
-      zIndex: {
-        appBar: 1200,
-        drawer: 1100,
       },
     }),
   )

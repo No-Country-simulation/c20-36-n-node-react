@@ -1,0 +1,283 @@
+.tinderCards__container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 120vh;
+  margin-top: 50px;
+  overflow-x: hidden;
+  padding: 20px;
+  background-color: #0b0205;
+}
+
+.tinderCards__chat {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: -2px -2px 94px -18px #37225a;
+    -webkit-box-shadow: -2px -2px 94px -18px #37225a;
+    -moz-box-shadow: -2px -2px 94px -18px #37225a;
+    border-radius: 20px;
+    background-color: #555;
+    margin-left: 2rem;
+}
+
+.chat_logo_container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.chat_logo{
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.search-input {
+  border: none;
+  padding: 8px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+  background-color: transparent;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  margin-left: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color:#555;
+}
+
+.search-icon{
+  height: 35px;
+  width: 35px;
+}
+
+.chat_divider{
+  margin-bottom: 1rem;
+}
+
+.chat {
+  width: 100%;
+  padding: 10px;
+  background-color: #555;
+}
+
+.chat__title, .chat__subtitle {
+  margin-bottom: 10px;
+  text-align: center;
+  color: #9356A0;
+  font-size: 2rem;
+  font-family: "Karla", sans-serif;
+}
+
+.chat_new {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.profile_circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 80px;
+}
+
+.profile_img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: solid 1px #b24f8f;
+}
+
+.profile_name {
+  font-size: 20px;
+  margin-top: 5px;
+  color: white;
+  font-family: "Karla", sans-serif;
+}
+
+.chat_message {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.message_row {
+  display: flex;
+  align-items: center;
+}
+
+.message_info {
+  margin-left: 10px;
+}
+
+.message_name {
+  font-size: 20px;
+  font-weight: bold;
+  color: whitesmoke;
+  font-family: "Karla", sans-serif;
+}
+
+.message_text {
+  font-size: 15px;
+  color: #DCCAE9;
+  font-style: italic;
+  font-family: "Karla", sans-serif;
+}
+
+/* Separator */
+.chat__separator {
+  border-left: 2px solid #fffafa;
+  height: 100%;
+  margin-left: 20px;
+}
+
+/* Tinder Cards Section */
+.tinderCards__cardContainer {
+  width: 60%;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swipe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/*Card styling */
+.card {
+  background-color: #0b0205;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: -2px -2px 94px -18px #37225a;
+  -webkit-box-shadow: -2px -2px 94px -18px #37225a;
+  -moz-box-shadow: -2px -2px 94px -18px #37225a;
+  border-radius: 20px;
+  margin-left: 15rem;
+  border: solid 2px #b24f8f;
+  position: relative;
+}
+
+.card-image {
+  height: 70%;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+}
+
+.card-name-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.card-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  font-family: "Karla", sans-serif;
+}
+
+.card-age {
+  font-size: 18px;
+  color: lightgray;
+  font-family: "Karla", sans-serif;
+}
+
+.card-info {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  flex-grow: 1;
+  font-family: "Karla", sans-serif;
+}
+
+.card-info h3 {
+  margin: 0;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  align-items: center;
+}
+
+.dislike-btn ,
+.like-btn{
+  border: #555 solid 1px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  font-size: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.like{
+  height: 40px;
+  width: 40px;
+}
+
+.like:hover{
+  scale: 1.4;
+}
+
+.dislike{
+  height: 40px;
+  width: 40px;
+}
+
+.dislike:hover{
+  scale: 1.15;
+}
