@@ -4,6 +4,9 @@
 ## Conecta, colabora, crea
 ![Programador feliz conectando](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbp8txTWc0xQF1MeCIvuYqgsQ9xQJQPVra1A&s)
 
+## Mira nuestro video en Youtube!
+[![Devconnect Video](https://img.youtube.com/vi/wmGpnP52U3A&lc=UgylljF859ilH0p-52F4AaABAg/0.jpg)](https://www.youtube.com/watch?v=wmGpnP52U3A&lc=UgylljF859ilH0p-52F4AaABAg)
+
 ## Descripción del Proyecto
 
 Devconnect es una innovadora web/app diseñada para conectar programadores junior que buscan colaborar en proyectos desafiantes y establecer conexiones significativas dentro de la comunidad de desarrollo. Nuestra plataforma facilita el networking, la creación de contactos, la formación de amistades y la construcción de una comunidad sólida. Los usuarios pueden unirse según sus stacks o lenguajes de programación específicos, facilitando la colaboración en proyectos alineados con sus habilidades y preferencias.
@@ -82,10 +85,6 @@ Para preguntas o soporte, puedes contactarnos a devconnect@gmail.com.
 • José Alvarez
 
 • Lucía Espindola
-
-**Tester:**
-
-• Mateo Lopez
 
 **Project Manager:**
 
